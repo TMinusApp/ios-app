@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3917DD6CE53C46A6B49B5C77 /* Pods_TMinus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3815ACB65F76BA8867DFA6B4 /* Pods_TMinus.framework */; };
 		7534A6B01E749425001A817B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7534A6AF1E749425001A817B /* AppDelegate.swift */; };
 		7534A6B21E749425001A817B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7534A6B11E749425001A817B /* ViewController.swift */; };
 		7534A6B51E749425001A817B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7534A6B31E749425001A817B /* Main.storyboard */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3815ACB65F76BA8867DFA6B4 /* Pods_TMinus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TMinus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CE89ACD474F838A039DEF75 /* Pods-TMinus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMinus.release.xcconfig"; path = "Pods/Target Support Files/Pods-TMinus/Pods-TMinus.release.xcconfig"; sourceTree = "<group>"; };
 		7534A6AC1E749425001A817B /* TMinus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMinus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7534A6AF1E749425001A817B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7534A6B11E749425001A817B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		7534A6B61E749425001A817B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7534A6B91E749425001A817B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7534A6BB1E749425001A817B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8313C3962031EA858F284075 /* Pods-TMinus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMinus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TMinus/Pods-TMinus.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3917DD6CE53C46A6B49B5C77 /* Pods_TMinus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				7534A6AE1E749425001A817B /* TMinus */,
 				7534A6AD1E749425001A817B /* Products */,
+				ABF5509A25A2DEBE78E9CCA7 /* Pods */,
+				D66249A0814A056AF258FFD0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = TMinus;
 			sourceTree = "<group>";
 		};
+		ABF5509A25A2DEBE78E9CCA7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8313C3962031EA858F284075 /* Pods-TMinus.debug.xcconfig */,
+				4CE89ACD474F838A039DEF75 /* Pods-TMinus.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D66249A0814A056AF258FFD0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3815ACB65F76BA8867DFA6B4 /* Pods_TMinus.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7534A6BE1E749425001A817B /* Build configuration list for PBXNativeTarget "TMinus" */;
 			buildPhases = (
+				41B25DAD3AA8D24E41F3F712 /* [CP] Check Pods Manifest.lock */,
 				7534A6A81E749425001A817B /* Sources */,
 				7534A6A91E749425001A817B /* Frameworks */,
 				7534A6AA1E749425001A817B /* Resources */,
+				ECCCD033596595B7F3B81952 /* [CP] Embed Pods Frameworks */,
+				4D23D831E00324414AB69EAF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		41B25DAD3AA8D24E41F3F712 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4D23D831E00324414AB69EAF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TMinus/Pods-TMinus-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ECCCD033596595B7F3B81952 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TMinus/Pods-TMinus-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7534A6A81E749425001A817B /* Sources */ = {
@@ -257,6 +332,7 @@
 		};
 		7534A6BF1E749425001A817B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8313C3962031EA858F284075 /* Pods-TMinus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4SGAZDJL4U;
@@ -270,6 +346,7 @@
 		};
 		7534A6C01E749425001A817B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4CE89ACD474F838A039DEF75 /* Pods-TMinus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4SGAZDJL4U;
