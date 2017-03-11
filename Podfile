@@ -7,5 +7,6 @@ target 'TMinus' do
 
   # Pods for TMinus
   pod 'Moya/RxSwift', '~> 8.0'
+  pod 'RxCocoa', '~> 3.2'
 
 end
