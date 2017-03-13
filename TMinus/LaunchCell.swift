@@ -33,9 +33,10 @@ class LaunchCell: UITableViewCell {
     private func scheduleTimerIfNecessary(for launch: Launch) {
         let timeUntil = launch.startDate.timeIntervalSinceNow
         if timeUntil < .oneDay * 2 {
-            timer = Timer.scheduledTimer(withTimeInterval: 0.25, repeats: true) { [weak self] timer in
+            timer = Timer(timeInterval: 0.25, repeats: true) { [weak self] timer in
                 self?.configureTimeLabel(with: launch)
             }
+            RunLoop.current.add(timer!, forMode: .commonModes)
         } else {
             timer?.invalidate()
             timer = nil
