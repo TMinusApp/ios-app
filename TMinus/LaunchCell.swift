@@ -8,15 +8,6 @@
 
 import UIKit
 
-struct Launch {
-    let name: String
-    
-    init?(dict: [String: Any]) {
-        guard let name = dict["name"] as? String else { return nil }
-        self.name = name
-    }
-}
-
 class LaunchCell: UITableViewCell {
     
     @IBOutlet var nameLabel: UILabel!

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		3917DD6CE53C46A6B49B5C77 /* Pods_TMinus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3815ACB65F76BA8867DFA6B4 /* Pods_TMinus.framework */; };
 		7534A6B01E749425001A817B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7534A6AF1E749425001A817B /* AppDelegate.swift */; };
-		7534A6B21E749425001A817B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7534A6B11E749425001A817B /* ViewController.swift */; };
+		7534A6B21E749425001A817B /* LaunchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7534A6B11E749425001A817B /* LaunchesViewController.swift */; };
 		7534A6B51E749425001A817B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7534A6B31E749425001A817B /* Main.storyboard */; };
 		7534A6B71E749425001A817B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7534A6B61E749425001A817B /* Assets.xcassets */; };
 		7534A6BA1E749425001A817B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7534A6B81E749425001A817B /* LaunchScreen.storyboard */; };
@@ -17,6 +17,8 @@
 		7534A6C51E74A000001A817B /* API+Moya.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7534A6C41E74A000001A817B /* API+Moya.swift */; };
 		7534A6C81E74A374001A817B /* DateFormatter+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7534A6C71E74A374001A817B /* DateFormatter+Additions.swift */; };
 		7534A6CD1E74BB2D001A817B /* LaunchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7534A6CC1E74BB2D001A817B /* LaunchCell.swift */; };
+		7534A6D01E75FA69001A817B /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7534A6CF1E75FA69001A817B /* Launch.swift */; };
+		7534A6D21E7613C4001A817B /* PageFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7534A6D11E7613C4001A817B /* PageFooterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +26,7 @@
 		4CE89ACD474F838A039DEF75 /* Pods-TMinus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMinus.release.xcconfig"; path = "Pods/Target Support Files/Pods-TMinus/Pods-TMinus.release.xcconfig"; sourceTree = "<group>"; };
 		7534A6AC1E749425001A817B /* TMinus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMinus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7534A6AF1E749425001A817B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7534A6B11E749425001A817B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7534A6B11E749425001A817B /* LaunchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesViewController.swift; sourceTree = "<group>"; };
 		7534A6B41E749425001A817B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7534A6B61E749425001A817B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7534A6B91E749425001A817B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -33,6 +35,8 @@
 		7534A6C41E74A000001A817B /* API+Moya.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "API+Moya.swift"; sourceTree = "<group>"; };
 		7534A6C71E74A374001A817B /* DateFormatter+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Additions.swift"; sourceTree = "<group>"; };
 		7534A6CC1E74BB2D001A817B /* LaunchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchCell.swift; sourceTree = "<group>"; };
+		7534A6CF1E75FA69001A817B /* Launch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
+		7534A6D11E7613C4001A817B /* PageFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageFooterView.swift; sourceTree = "<group>"; };
 		8313C3962031EA858F284075 /* Pods-TMinus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMinus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TMinus/Pods-TMinus.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,15 +73,12 @@
 		7534A6AE1E749425001A817B /* TMinus */ = {
 			isa = PBXGroup;
 			children = (
+				7534A6C11E749E9C001A817B /* API */,
+				7534A6CE1E75FA5B001A817B /* Model */,
 				7534A6CA1E74BAC3001A817B /* Presentation */,
 				7534A6C61E74A364001A817B /* Extensions */,
-				7534A6C11E749E9C001A817B /* API */,
-				7534A6AF1E749425001A817B /* AppDelegate.swift */,
-				7534A6B11E749425001A817B /* ViewController.swift */,
-				7534A6B31E749425001A817B /* Main.storyboard */,
-				7534A6B61E749425001A817B /* Assets.xcassets */,
-				7534A6B81E749425001A817B /* LaunchScreen.storyboard */,
-				7534A6BB1E749425001A817B /* Info.plist */,
+				7534A6D61E7642CA001A817B /* Resources */,
+				7534A6D51E7642BF001A817B /* Supporting Files */,
 			);
 			path = TMinus;
 			sourceTree = "<group>";
@@ -102,6 +103,8 @@
 		7534A6CA1E74BAC3001A817B /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				7534A6D41E7642AD001A817B /* Interface */,
+				7534A6D31E7642A5001A817B /* Controllers */,
 				7534A6CB1E74BAD0001A817B /* Views */,
 			);
 			name = Presentation;
@@ -111,8 +114,51 @@
 			isa = PBXGroup;
 			children = (
 				7534A6CC1E74BB2D001A817B /* LaunchCell.swift */,
+				7534A6D11E7613C4001A817B /* PageFooterView.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		7534A6CE1E75FA5B001A817B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7534A6CF1E75FA69001A817B /* Launch.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		7534A6D31E7642A5001A817B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7534A6B11E749425001A817B /* LaunchesViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		7534A6D41E7642AD001A817B /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				7534A6B31E749425001A817B /* Main.storyboard */,
+				7534A6B81E749425001A817B /* LaunchScreen.storyboard */,
+			);
+			name = Interface;
+			sourceTree = "<group>";
+		};
+		7534A6D51E7642BF001A817B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7534A6AF1E749425001A817B /* AppDelegate.swift */,
+				7534A6BB1E749425001A817B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7534A6D61E7642CA001A817B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7534A6B61E749425001A817B /* Assets.xcassets */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		ABF5509A25A2DEBE78E9CCA7 /* Pods */ = {
@@ -259,8 +305,10 @@
 				7534A6C81E74A374001A817B /* DateFormatter+Additions.swift in Sources */,
 				7534A6C51E74A000001A817B /* API+Moya.swift in Sources */,
 				7534A6CD1E74BB2D001A817B /* LaunchCell.swift in Sources */,
-				7534A6B21E749425001A817B /* ViewController.swift in Sources */,
+				7534A6B21E749425001A817B /* LaunchesViewController.swift in Sources */,
+				7534A6D01E75FA69001A817B /* Launch.swift in Sources */,
 				7534A6C31E749ED7001A817B /* API.swift in Sources */,
+				7534A6D21E7613C4001A817B /* PageFooterView.swift in Sources */,
 				7534A6B01E749425001A817B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
