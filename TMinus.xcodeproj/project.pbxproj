@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3917DD6CE53C46A6B49B5C77 /* Pods_TMinus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3815ACB65F76BA8867DFA6B4 /* Pods_TMinus.framework */; };
-		7523EAD31E76627E00A52449 /* WeakTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7523EAD21E76627E00A52449 /* WeakTimer.swift */; };
 		7534A6B01E749425001A817B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7534A6AF1E749425001A817B /* AppDelegate.swift */; };
 		7534A6B21E749425001A817B /* LaunchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7534A6B11E749425001A817B /* LaunchesViewController.swift */; };
 		7534A6B51E749425001A817B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7534A6B31E749425001A817B /* Main.storyboard */; };
@@ -20,12 +19,15 @@
 		7534A6CD1E74BB2D001A817B /* LaunchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7534A6CC1E74BB2D001A817B /* LaunchCell.swift */; };
 		7534A6D01E75FA69001A817B /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7534A6CF1E75FA69001A817B /* Launch.swift */; };
 		7534A6D81E76437C001A817B /* PageLoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7534A6D71E76437C001A817B /* PageLoadingCell.swift */; };
+		BEF79DD51E77570200C3F61D /* TimeInterval+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF79DD41E77570200C3F61D /* TimeInterval+Additions.swift */; };
+		BEF79DD71E77576F00C3F61D /* LaunchTextProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF79DD61E77576F00C3F61D /* LaunchTextProvider.swift */; };
+		BEF79DD91E77599900C3F61D /* UIView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF79DD81E77599900C3F61D /* UIView+Additions.swift */; };
+		BEF79DDB1E775A5100C3F61D /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF79DDA1E775A5100C3F61D /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3815ACB65F76BA8867DFA6B4 /* Pods_TMinus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TMinus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CE89ACD474F838A039DEF75 /* Pods-TMinus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMinus.release.xcconfig"; path = "Pods/Target Support Files/Pods-TMinus/Pods-TMinus.release.xcconfig"; sourceTree = "<group>"; };
-		7523EAD21E76627E00A52449 /* WeakTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakTimer.swift; sourceTree = "<group>"; };
 		7534A6AC1E749425001A817B /* TMinus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMinus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7534A6AF1E749425001A817B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7534A6B11E749425001A817B /* LaunchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +42,10 @@
 		7534A6CF1E75FA69001A817B /* Launch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
 		7534A6D71E76437C001A817B /* PageLoadingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageLoadingCell.swift; sourceTree = "<group>"; };
 		8313C3962031EA858F284075 /* Pods-TMinus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMinus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TMinus/Pods-TMinus.debug.xcconfig"; sourceTree = "<group>"; };
+		BEF79DD41E77570200C3F61D /* TimeInterval+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Additions.swift"; sourceTree = "<group>"; };
+		BEF79DD61E77576F00C3F61D /* LaunchTextProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchTextProvider.swift; sourceTree = "<group>"; };
+		BEF79DD81E77599900C3F61D /* UIView+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Additions.swift"; sourceTree = "<group>"; };
+		BEF79DDA1E775A5100C3F61D /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +63,7 @@
 		7523EAD11E76626E00A52449 /* Business */ = {
 			isa = PBXGroup;
 			children = (
-				7523EAD21E76627E00A52449 /* WeakTimer.swift */,
+				BEF79DD61E77576F00C3F61D /* LaunchTextProvider.swift */,
 			);
 			name = Business;
 			sourceTree = "<group>";
@@ -107,6 +113,8 @@
 			isa = PBXGroup;
 			children = (
 				7534A6C71E74A374001A817B /* DateFormatter+Additions.swift */,
+				BEF79DD41E77570200C3F61D /* TimeInterval+Additions.swift */,
+				BEF79DD81E77599900C3F61D /* UIView+Additions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -126,6 +134,7 @@
 			children = (
 				7534A6CC1E74BB2D001A817B /* LaunchCell.swift */,
 				7534A6D71E76437C001A817B /* PageLoadingCell.swift */,
+				BEF79DDA1E775A5100C3F61D /* LoadingView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -315,11 +324,14 @@
 			files = (
 				7534A6C81E74A374001A817B /* DateFormatter+Additions.swift in Sources */,
 				7534A6C51E74A000001A817B /* API+Moya.swift in Sources */,
+				BEF79DD71E77576F00C3F61D /* LaunchTextProvider.swift in Sources */,
 				7534A6CD1E74BB2D001A817B /* LaunchCell.swift in Sources */,
+				BEF79DD91E77599900C3F61D /* UIView+Additions.swift in Sources */,
+				BEF79DDB1E775A5100C3F61D /* LoadingView.swift in Sources */,
 				7534A6D81E76437C001A817B /* PageLoadingCell.swift in Sources */,
 				7534A6B21E749425001A817B /* LaunchesViewController.swift in Sources */,
+				BEF79DD51E77570200C3F61D /* TimeInterval+Additions.swift in Sources */,
 				7534A6D01E75FA69001A817B /* Launch.swift in Sources */,
-				7523EAD31E76627E00A52449 /* WeakTimer.swift in Sources */,
 				7534A6C31E749ED7001A817B /* API.swift in Sources */,
 				7534A6B01E749425001A817B /* AppDelegate.swift in Sources */,
 			);

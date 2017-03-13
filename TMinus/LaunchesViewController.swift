@@ -39,12 +39,15 @@ class LaunchesViewController: UIViewController {
     
     fileprivate var launchResults = LaunchPageResults()
     private var isFetching = false
+    private var loadingView = LoadingView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 44.0
+        
+        loadingView.showInView(view)
         fetchNextPage()
     }
     
@@ -67,6 +70,7 @@ class LaunchesViewController: UIViewController {
                 return (launches, total)
             }
             .subscribe { [weak self] (event) in
+                self?.loadingView.hide()
                 switch event {
                 case .next(let launches, let total):
                     self?.handleFetchComplete(with: launches, total: total)
@@ -120,7 +124,11 @@ extension LaunchesViewController: UITableViewDataSource {
     }
 }
 
-extension LaunchesViewController: UIScrollViewDelegate {
+extension LaunchesViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard launchResults.canFetchMoreLaunches else { return }
