@@ -10,10 +10,28 @@ import Foundation
 import SwiftyJSON
 
 struct Launch {
-    let name: String
+    let rocketName: String
+    let missionName: String
+    let startDate: Date
+    let probability: Double // percentage between 0.0 - 1.0
     
     init?(json: JSON) {
-        guard let name = json["name"].string else { return nil }
-        self.name = name
+        guard let rocketName = json["rocket"]["name"].string,
+            let missionName = json["missions"][0]["name"].string,
+            let startDate = json["isostart"].string.flatMap(Date.fromAPIISODateString),
+            let probability = json["probability"].double.flatMap({ $0/100.0 }) else { return nil }
+        
+        self.rocketName = rocketName
+        self.missionName = missionName
+        self.startDate = startDate
+        self.probability = probability
+    }
+    
+    //MARK: Private
+}
+
+extension Date {
+    static func fromAPIISODateString(_ dateString: String) -> Date? {
+        return DateFormatter.apiISOFormatter.date(from: dateString)
     }
 }

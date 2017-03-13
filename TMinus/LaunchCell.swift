@@ -9,14 +9,22 @@
 import UIKit
 
 class LaunchCell: UITableViewCell {
-    
-    @IBOutlet var nameLabel: UILabel!
-    
     static var reuseID: String {
         return "LaunchCell"
     }
     
+    @IBOutlet var rocketLabel: UILabel!
+    @IBOutlet var missionLabel: UILabel!
+    @IBOutlet var timeLabel: UILabel!
+    @IBOutlet var probabilityLabel: UILabel!
+    
     func configure(with launch: Launch) {
-        nameLabel.text = launch.name
+//        rocketLabel.text = launch.rocketName
+//        missionLabel.text = launch.missionName
+        
     }
+    
+    //MARK: Private
+    
+//    private func
 }

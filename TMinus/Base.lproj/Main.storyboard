@@ -21,37 +21,83 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tig-L7-qpS">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="45" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tig-L7-qpS">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LaunchCell" rowHeight="66" id="r13-En-dvY" customClass="LaunchCell" customModule="TMinus" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="66"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LaunchCell" rowHeight="50" id="r13-En-dvY" customClass="LaunchCell" customModule="TMinus" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r13-En-dvY" id="gqy-Pw-FWh">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UEg-kG-5i1">
-                                                    <rect key="frame" x="8" y="4" width="359" height="57.5"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rocket" translatesAutoresizingMaskIntoConstraints="NO" id="Xex-5C-KM1">
+                                                    <rect key="frame" x="8" y="4" width="21" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="Kv4-zE-dqu"/>
+                                                        <constraint firstAttribute="width" constant="21" id="qnR-uz-CQS"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="satellite" translatesAutoresizingMaskIntoConstraints="NO" id="Xwp-aH-tmX">
+                                                    <rect key="frame" x="346" y="4" width="21" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="21" id="Xb4-Qd-xa4"/>
+                                                        <constraint firstAttribute="height" constant="21" id="mRn-BZ-gyT"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Falcon 9 Full Thrust" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UEg-kG-5i1">
+                                                    <rect key="frame" x="33" y="4" width="222.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="Echostar 23" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G2D-bH-sBN">
+                                                    <rect key="frame" x="259.5" y="6" width="82.5" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="T- 02:53:48" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Duv-BV-DuQ">
+                                                    <rect key="frame" x="8" y="29" width="236" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="60% Go for launch" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ot-zg-4Vi">
+                                                    <rect key="frame" x="248" y="29" width="119" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="1Ot-zg-4Vi" firstAttribute="baseline" secondItem="Duv-BV-DuQ" secondAttribute="baseline" id="BsF-mh-GeQ"/>
+                                                <constraint firstItem="Xwp-aH-tmX" firstAttribute="leading" secondItem="G2D-bH-sBN" secondAttribute="trailing" constant="4" id="CpU-Au-uWG"/>
+                                                <constraint firstAttribute="bottom" secondItem="Duv-BV-DuQ" secondAttribute="bottom" constant="4" id="Cun-U2-vsQ"/>
                                                 <constraint firstItem="UEg-kG-5i1" firstAttribute="top" secondItem="gqy-Pw-FWh" secondAttribute="top" constant="4" id="Fal-Mb-B1m"/>
-                                                <constraint firstAttribute="trailing" secondItem="UEg-kG-5i1" secondAttribute="trailing" constant="8" id="drq-TR-4vJ"/>
-                                                <constraint firstAttribute="bottom" secondItem="UEg-kG-5i1" secondAttribute="bottom" constant="4" id="xtd-If-zdP"/>
-                                                <constraint firstItem="UEg-kG-5i1" firstAttribute="leading" secondItem="gqy-Pw-FWh" secondAttribute="leading" constant="8" id="yBm-ez-dRF"/>
+                                                <constraint firstItem="G2D-bH-sBN" firstAttribute="leading" secondItem="UEg-kG-5i1" secondAttribute="trailing" constant="4" id="NhA-Rc-fXg"/>
+                                                <constraint firstItem="Xex-5C-KM1" firstAttribute="leading" secondItem="gqy-Pw-FWh" secondAttribute="leading" constant="8" id="Ulo-4N-69w"/>
+                                                <constraint firstAttribute="trailing" secondItem="Xwp-aH-tmX" secondAttribute="trailing" constant="8" id="V5U-68-RRY"/>
+                                                <constraint firstItem="Xex-5C-KM1" firstAttribute="top" secondItem="gqy-Pw-FWh" secondAttribute="top" constant="4" id="VJn-nA-38k"/>
+                                                <constraint firstItem="G2D-bH-sBN" firstAttribute="baseline" secondItem="UEg-kG-5i1" secondAttribute="baseline" id="W6u-sW-M62"/>
+                                                <constraint firstItem="Xwp-aH-tmX" firstAttribute="top" secondItem="gqy-Pw-FWh" secondAttribute="top" constant="4" id="XP8-Yt-XXz"/>
+                                                <constraint firstItem="Duv-BV-DuQ" firstAttribute="top" secondItem="UEg-kG-5i1" secondAttribute="bottom" constant="4" id="izZ-ni-cBR"/>
+                                                <constraint firstItem="1Ot-zg-4Vi" firstAttribute="leading" secondItem="Duv-BV-DuQ" secondAttribute="trailing" constant="4" id="nTd-7j-sl3"/>
+                                                <constraint firstItem="UEg-kG-5i1" firstAttribute="leading" secondItem="Xex-5C-KM1" secondAttribute="trailing" constant="4" id="nVs-PJ-cSr"/>
+                                                <constraint firstAttribute="trailing" secondItem="1Ot-zg-4Vi" secondAttribute="trailing" constant="8" id="qNP-m2-XIv"/>
+                                                <constraint firstItem="Duv-BV-DuQ" firstAttribute="leading" secondItem="gqy-Pw-FWh" secondAttribute="leading" constant="8" id="sQE-CU-2w2"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="nameLabel" destination="UEg-kG-5i1" id="LJJ-Fk-2bv"/>
+                                            <outlet property="missionLabel" destination="G2D-bH-sBN" id="YAt-yt-irc"/>
+                                            <outlet property="probabilityLabel" destination="1Ot-zg-4Vi" id="ENh-9F-V4j"/>
+                                            <outlet property="rocketLabel" destination="UEg-kG-5i1" id="OB7-MH-kz5"/>
+                                            <outlet property="timeLabel" destination="Duv-BV-DuQ" id="HC7-v0-JLr"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PageLoadingCell" rowHeight="57" id="FV2-4p-nrP" userLabel="PageCell" customClass="PageLoadingCell" customModule="TMinus" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="94" width="375" height="57"/>
+                                        <rect key="frame" x="0.0" y="78" width="375" height="57"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FV2-4p-nrP" id="sy4-WZ-o7V">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
@@ -112,4 +158,8 @@
             <point key="canvasLocation" x="-626" y="139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="rocket" width="100" height="100"/>
+        <image name="satellite" width="71" height="71"/>
+    </resources>
 </document>
