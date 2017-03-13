@@ -29,7 +29,6 @@ struct LaunchPageResults {
 }
 
 struct LaunchResponseError: Swift.Error {}
-let PageCellReuseID = "PageCell"
 
 class LaunchesViewController: UIViewController {
 
@@ -116,7 +115,7 @@ extension LaunchesViewController: UITableViewDataSource {
             cell.configure(with: launchResults.launches[indexPath.row])
             return cell
         } else {
-            return tableView.dequeueReusableCell(withIdentifier: PageCellReuseID, for: indexPath)
+            return tableView.dequeueReusableCell(withIdentifier: PageLoadingCell.reuseID, for: indexPath)
         }
     }
 }

@@ -18,7 +18,7 @@
 		7534A6C81E74A374001A817B /* DateFormatter+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7534A6C71E74A374001A817B /* DateFormatter+Additions.swift */; };
 		7534A6CD1E74BB2D001A817B /* LaunchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7534A6CC1E74BB2D001A817B /* LaunchCell.swift */; };
 		7534A6D01E75FA69001A817B /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7534A6CF1E75FA69001A817B /* Launch.swift */; };
-		7534A6D21E7613C4001A817B /* PageFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7534A6D11E7613C4001A817B /* PageFooterView.swift */; };
+		7534A6D81E76437C001A817B /* PageLoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7534A6D71E76437C001A817B /* PageLoadingCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +36,7 @@
 		7534A6C71E74A374001A817B /* DateFormatter+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Additions.swift"; sourceTree = "<group>"; };
 		7534A6CC1E74BB2D001A817B /* LaunchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchCell.swift; sourceTree = "<group>"; };
 		7534A6CF1E75FA69001A817B /* Launch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
-		7534A6D11E7613C4001A817B /* PageFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageFooterView.swift; sourceTree = "<group>"; };
+		7534A6D71E76437C001A817B /* PageLoadingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageLoadingCell.swift; sourceTree = "<group>"; };
 		8313C3962031EA858F284075 /* Pods-TMinus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMinus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TMinus/Pods-TMinus.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,7 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				7534A6CC1E74BB2D001A817B /* LaunchCell.swift */,
-				7534A6D11E7613C4001A817B /* PageFooterView.swift */,
+				7534A6D71E76437C001A817B /* PageLoadingCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -305,10 +305,10 @@
 				7534A6C81E74A374001A817B /* DateFormatter+Additions.swift in Sources */,
 				7534A6C51E74A000001A817B /* API+Moya.swift in Sources */,
 				7534A6CD1E74BB2D001A817B /* LaunchCell.swift in Sources */,
+				7534A6D81E76437C001A817B /* PageLoadingCell.swift in Sources */,
 				7534A6B21E749425001A817B /* LaunchesViewController.swift in Sources */,
 				7534A6D01E75FA69001A817B /* Launch.swift in Sources */,
 				7534A6C31E749ED7001A817B /* API.swift in Sources */,
-				7534A6D21E7613C4001A817B /* PageFooterView.swift in Sources */,
 				7534A6B01E749425001A817B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -50,7 +50,7 @@
                                             <outlet property="nameLabel" destination="UEg-kG-5i1" id="LJJ-Fk-2bv"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PageCell" rowHeight="57" id="FV2-4p-nrP" userLabel="PageCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PageLoadingCell" rowHeight="57" id="FV2-4p-nrP" userLabel="PageCell" customClass="PageLoadingCell" customModule="TMinus" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="94" width="375" height="57"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FV2-4p-nrP" id="sy4-WZ-o7V">
@@ -67,6 +67,9 @@
                                                 <constraint firstItem="hes-u3-f4l" firstAttribute="centerX" secondItem="sy4-WZ-o7V" secondAttribute="centerX" id="fp6-GG-4rw"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="activityIndicator" destination="hes-u3-f4l" id="iOm-Hy-mC8"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
