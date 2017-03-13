@@ -16,7 +16,7 @@ extension DateFormatter {
     }
     
     static var apiISOFormatter: DateFormatter {
-        return getDateFormatter(with: "yyyy-MM-dd'T'HH:mm:ss.SSSXXXXX",
+        return getDateFormatter(with: "yyyyMMdd'T'HHmmss'Z'",
                                 locale: Locale(identifier: "en_US_POSIX"),
                                 timeZone: TimeZone(secondsFromGMT: 0) ?? TimeZone.current)
     }

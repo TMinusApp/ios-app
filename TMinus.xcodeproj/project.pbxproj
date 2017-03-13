@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3917DD6CE53C46A6B49B5C77 /* Pods_TMinus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3815ACB65F76BA8867DFA6B4 /* Pods_TMinus.framework */; };
+		7523EAD31E76627E00A52449 /* WeakTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7523EAD21E76627E00A52449 /* WeakTimer.swift */; };
 		7534A6B01E749425001A817B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7534A6AF1E749425001A817B /* AppDelegate.swift */; };
 		7534A6B21E749425001A817B /* LaunchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7534A6B11E749425001A817B /* LaunchesViewController.swift */; };
 		7534A6B51E749425001A817B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7534A6B31E749425001A817B /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		3815ACB65F76BA8867DFA6B4 /* Pods_TMinus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TMinus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CE89ACD474F838A039DEF75 /* Pods-TMinus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMinus.release.xcconfig"; path = "Pods/Target Support Files/Pods-TMinus/Pods-TMinus.release.xcconfig"; sourceTree = "<group>"; };
+		7523EAD21E76627E00A52449 /* WeakTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakTimer.swift; sourceTree = "<group>"; };
 		7534A6AC1E749425001A817B /* TMinus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMinus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7534A6AF1E749425001A817B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7534A6B11E749425001A817B /* LaunchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +54,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7523EAD11E76626E00A52449 /* Business */ = {
+			isa = PBXGroup;
+			children = (
+				7523EAD21E76627E00A52449 /* WeakTimer.swift */,
+			);
+			name = Business;
+			sourceTree = "<group>";
+		};
 		7534A6A31E749425001A817B = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +83,7 @@
 		7534A6AE1E749425001A817B /* TMinus */ = {
 			isa = PBXGroup;
 			children = (
+				7523EAD11E76626E00A52449 /* Business */,
 				7534A6C11E749E9C001A817B /* API */,
 				7534A6CE1E75FA5B001A817B /* Model */,
 				7534A6CA1E74BAC3001A817B /* Presentation */,
@@ -308,6 +319,7 @@
 				7534A6D81E76437C001A817B /* PageLoadingCell.swift in Sources */,
 				7534A6B21E749425001A817B /* LaunchesViewController.swift in Sources */,
 				7534A6D01E75FA69001A817B /* Launch.swift in Sources */,
+				7523EAD31E76627E00A52449 /* WeakTimer.swift in Sources */,
 				7534A6C31E749ED7001A817B /* API.swift in Sources */,
 				7534A6B01E749425001A817B /* AppDelegate.swift in Sources */,
 			);
