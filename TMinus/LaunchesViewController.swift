@@ -35,6 +35,7 @@ class LaunchesViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     
     private let provider = RxMoyaProvider<API>()
+    private let notificationManager = NotificationManager()
     private let disposeBag = DisposeBag()
     
     fileprivate var launchResults = LaunchPageResults()
@@ -83,8 +84,28 @@ class LaunchesViewController: UIViewController {
             .disposed(by: disposeBag)
     }
     
+    private func authorizeAndRegisterNotifications(with launches: [Launch]) {
+        notificationManager.authorize()
+        .subscribe { [weak self] (event) in
+            switch event {
+            case .next(let status):
+                if status == .granted {
+                    self?.registerNotifications(with: launches)
+                }
+            default:
+                break
+            }
+        }
+        .disposed(by: disposeBag)
+    }
+    
+    private func registerNotifications(with launches: [Launch]) {
+        notificationManager.registerNotifications(for: launches)
+    }
+    
     private func handleFetchComplete(with launches: [Launch], total: Int) {
         launchResults.appendPage(with: launches, total: total)
+        authorizeAndRegisterNotifications(with: launchResults.launches)
         tableView.reloadData()
     }
     

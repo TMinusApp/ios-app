@@ -19,6 +19,7 @@
 		7534A6CD1E74BB2D001A817B /* LaunchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7534A6CC1E74BB2D001A817B /* LaunchCell.swift */; };
 		7534A6D01E75FA69001A817B /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7534A6CF1E75FA69001A817B /* Launch.swift */; };
 		7534A6D81E76437C001A817B /* PageLoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7534A6D71E76437C001A817B /* PageLoadingCell.swift */; };
+		75D61E131E779DD1009D4BAB /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D61E121E779DD1009D4BAB /* NotificationManager.swift */; };
 		BEF79DD51E77570200C3F61D /* TimeInterval+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF79DD41E77570200C3F61D /* TimeInterval+Additions.swift */; };
 		BEF79DD71E77576F00C3F61D /* LaunchTextProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF79DD61E77576F00C3F61D /* LaunchTextProvider.swift */; };
 		BEF79DD91E77599900C3F61D /* UIView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF79DD81E77599900C3F61D /* UIView+Additions.swift */; };
@@ -41,6 +42,7 @@
 		7534A6CC1E74BB2D001A817B /* LaunchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchCell.swift; sourceTree = "<group>"; };
 		7534A6CF1E75FA69001A817B /* Launch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
 		7534A6D71E76437C001A817B /* PageLoadingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageLoadingCell.swift; sourceTree = "<group>"; };
+		75D61E121E779DD1009D4BAB /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		8313C3962031EA858F284075 /* Pods-TMinus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMinus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TMinus/Pods-TMinus.debug.xcconfig"; sourceTree = "<group>"; };
 		BEF79DD41E77570200C3F61D /* TimeInterval+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Additions.swift"; sourceTree = "<group>"; };
 		BEF79DD61E77576F00C3F61D /* LaunchTextProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchTextProvider.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				BEF79DD61E77576F00C3F61D /* LaunchTextProvider.swift */,
+				75D61E121E779DD1009D4BAB /* NotificationManager.swift */,
 			);
 			name = Business;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				7534A6CD1E74BB2D001A817B /* LaunchCell.swift in Sources */,
 				BEF79DD91E77599900C3F61D /* UIView+Additions.swift in Sources */,
 				BEF79DDB1E775A5100C3F61D /* LoadingView.swift in Sources */,
+				75D61E131E779DD1009D4BAB /* NotificationManager.swift in Sources */,
 				7534A6D81E76437C001A817B /* PageLoadingCell.swift in Sources */,
 				7534A6B21E749425001A817B /* LaunchesViewController.swift in Sources */,
 				BEF79DD51E77570200C3F61D /* TimeInterval+Additions.swift in Sources */,
