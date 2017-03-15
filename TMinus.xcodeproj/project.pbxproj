@@ -204,9 +204,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7534A6AB1E749425001A817B /* TMinus */ = {
+		7534A6AB1E749425001A817B /* T-Minus */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7534A6BE1E749425001A817B /* Build configuration list for PBXNativeTarget "TMinus" */;
+			buildConfigurationList = 7534A6BE1E749425001A817B /* Build configuration list for PBXNativeTarget "T-Minus" */;
 			buildPhases = (
 				41B25DAD3AA8D24E41F3F712 /* [CP] Check Pods Manifest.lock */,
 				7534A6A81E749425001A817B /* Sources */,
@@ -219,7 +219,7 @@
 			);
 			dependencies = (
 			);
-			name = TMinus;
+			name = "T-Minus";
 			productName = TMinus;
 			productReference = 7534A6AC1E749425001A817B /* TMinus.app */;
 			productType = "com.apple.product-type.application";
@@ -254,7 +254,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7534A6AB1E749425001A817B /* TMinus */,
+				7534A6AB1E749425001A817B /* T-Minus */,
 			);
 		};
 /* End PBXProject section */
@@ -494,7 +494,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7534A6BE1E749425001A817B /* Build configuration list for PBXNativeTarget "TMinus" */ = {
+		7534A6BE1E749425001A817B /* Build configuration list for PBXNativeTarget "T-Minus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7534A6BF1E749425001A817B /* Debug */,
