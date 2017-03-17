@@ -20,6 +20,7 @@
 		7534A6D01E75FA69001A817B /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7534A6CF1E75FA69001A817B /* Launch.swift */; };
 		7534A6D81E76437C001A817B /* PageLoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7534A6D71E76437C001A817B /* PageLoadingCell.swift */; };
 		75D61E131E779DD1009D4BAB /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D61E121E779DD1009D4BAB /* NotificationManager.swift */; };
+		75D61E151E7B8B67009D4BAB /* JSONModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D61E141E7B8B67009D4BAB /* JSONModel.swift */; };
 		BEF79DD51E77570200C3F61D /* TimeInterval+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF79DD41E77570200C3F61D /* TimeInterval+Additions.swift */; };
 		BEF79DD71E77576F00C3F61D /* LaunchTextProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF79DD61E77576F00C3F61D /* LaunchTextProvider.swift */; };
 		BEF79DD91E77599900C3F61D /* UIView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF79DD81E77599900C3F61D /* UIView+Additions.swift */; };
@@ -29,7 +30,7 @@
 /* Begin PBXFileReference section */
 		3815ACB65F76BA8867DFA6B4 /* Pods_TMinus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TMinus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CE89ACD474F838A039DEF75 /* Pods-TMinus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMinus.release.xcconfig"; path = "Pods/Target Support Files/Pods-TMinus/Pods-TMinus.release.xcconfig"; sourceTree = "<group>"; };
-		7534A6AC1E749425001A817B /* T-Minus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = T-Minus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7534A6AC1E749425001A817B /* T-Minus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "T-Minus.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7534A6AF1E749425001A817B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7534A6B11E749425001A817B /* LaunchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesViewController.swift; sourceTree = "<group>"; };
 		7534A6B41E749425001A817B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -43,6 +44,7 @@
 		7534A6CF1E75FA69001A817B /* Launch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
 		7534A6D71E76437C001A817B /* PageLoadingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageLoadingCell.swift; sourceTree = "<group>"; };
 		75D61E121E779DD1009D4BAB /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		75D61E141E7B8B67009D4BAB /* JSONModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONModel.swift; sourceTree = "<group>"; };
 		8313C3962031EA858F284075 /* Pods-TMinus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMinus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TMinus/Pods-TMinus.debug.xcconfig"; sourceTree = "<group>"; };
 		BEF79DD41E77570200C3F61D /* TimeInterval+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Additions.swift"; sourceTree = "<group>"; };
 		BEF79DD61E77576F00C3F61D /* LaunchTextProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchTextProvider.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 		7534A6CE1E75FA5B001A817B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				75D61E141E7B8B67009D4BAB /* JSONModel.swift */,
 				7534A6CF1E75FA69001A817B /* Launch.swift */,
 			);
 			name = Model;
@@ -238,6 +241,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 4SGAZDJL4U;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -336,6 +344,7 @@
 				7534A6B21E749425001A817B /* LaunchesViewController.swift in Sources */,
 				BEF79DD51E77570200C3F61D /* TimeInterval+Additions.swift in Sources */,
 				7534A6D01E75FA69001A817B /* Launch.swift in Sources */,
+				75D61E151E7B8B67009D4BAB /* JSONModel.swift in Sources */,
 				7534A6C31E749ED7001A817B /* API.swift in Sources */,
 				7534A6B01E749425001A817B /* AppDelegate.swift in Sources */,
 			);

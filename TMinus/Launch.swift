@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-struct Launch {
+struct Launch: JSONModel {
     let rocketName: String
     let missionName: String?
     let startDate: Date
