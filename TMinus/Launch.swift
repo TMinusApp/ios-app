@@ -32,26 +32,23 @@ struct Launch: JSONModel {
 
 extension Launch: NotificationType {
     
+    private var launchIdentifier: String {
+        let dateString = DateFormatter.apiISOFormatter.string(from: startDate)
+        return "\(missionName ?? rocketName).\(dateString)"
+    }
+    
     func makeNotificationRequest() -> UNNotificationRequest {
         let date = startDate.addingTimeInterval(-.oneHour)
         let components = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
         
         let content = UNMutableNotificationContent()
-        var title = rocketName
-        if let missionName = missionName, !missionName.isEmpty {
-            title = "\(title) - \(missionName)"
-        }
+        let title = missionName.flatMap { $0.isEmpty ? nil : "\(rocketName) - \($0)" } ?? rocketName
+        
         content.title = title
-        content.body = "The launch window is scheduled to open in one hour."
+        content.body = NSLocalizedString("The launch window is scheduled to open in one hour.", comment: "")
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: false)
-        let identifier = launchIdentifier()
-        return UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
-    }
-    
-    private func launchIdentifier() -> String {
-        let dateString = DateFormatter.apiISOFormatter.string(from: startDate)
-        return "\(missionName ?? rocketName).\(dateString)"
+        return UNNotificationRequest(identifier: launchIdentifier, content: content, trigger: trigger)
     }
 }
 

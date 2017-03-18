@@ -12,9 +12,9 @@ import RxSwift
 struct BlockObserver<T: ObserverType, U>: ObserverType where U == T.E {
     typealias E = U
     private let child: T
-    private let completion: (Swift.Error?) -> ()
+    private let completion: (Swift.Error?) -> Void
     
-    init(_ child: T, completion: @escaping (Swift.Error?) -> ()) {
+    init(_ child: T, completion: @escaping (Swift.Error?) -> Void) {
         self.child = child
         self.completion = completion
     }
