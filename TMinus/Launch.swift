@@ -8,8 +8,9 @@
 
 import Foundation
 import SwiftyJSON
+import UserNotifications
 
-struct Launch {
+struct Launch: JSONModel {
     let rocketName: String
     let missionName: String?
     let startDate: Date
@@ -27,6 +28,28 @@ struct Launch {
     }
     
     //MARK: Private
+}
+
+extension Launch: NotificationType {
+    
+    private var launchIdentifier: String {
+        let dateString = DateFormatter.apiISOFormatter.string(from: startDate)
+        return "\(missionName ?? rocketName).\(dateString)"
+    }
+    
+    func makeNotificationRequest() -> UNNotificationRequest {
+        let date = startDate.addingTimeInterval(-.oneHour)
+        let components = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
+        
+        let content = UNMutableNotificationContent()
+        let title = missionName.flatMap { $0.isEmpty ? nil : "\(rocketName) - \($0)" } ?? rocketName
+        
+        content.title = title
+        content.body = NSLocalizedString("The launch window is scheduled to open in one hour.", comment: "")
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: false)
+        return UNNotificationRequest(identifier: launchIdentifier, content: content, trigger: trigger)
+    }
 }
 
 extension Date {
