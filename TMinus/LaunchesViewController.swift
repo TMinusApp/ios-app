@@ -35,7 +35,7 @@ class LaunchesViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     
     private let provider = RxMoyaProvider<API>()
-    private let notificationManager = NotificationManager()
+    private let notificationManager = NotificationManager<Launch>()
     private let disposeBag = DisposeBag()
     
     fileprivate var launchResults = LaunchPageResults()
@@ -100,6 +100,7 @@ class LaunchesViewController: UIViewController {
     }
     
     private func registerNotifications(with launches: [Launch]) {
+        notificationManager.removePendingNotifications()
         notificationManager.registerNotifications(for: launches)
     }
     

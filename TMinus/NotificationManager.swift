@@ -10,12 +10,37 @@ import Foundation
 import UserNotifications
 import RxSwift
 
-struct NotificationManager {
-    enum AuthStatus {
-        case unknown, granted, denied
+enum NotificationAuthStatus {
+    case unknown, granted, denied
+}
+
+struct NotificationManager<T: NotificationType> {
+
+    func removePendingNotifications() {
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
     }
     
-    func authorize() -> Observable<AuthStatus> {
+    func registerNotifications(for models: [T]) {
+        models.forEach { self.registerNotification(with: $0) }
+    }
+    
+    // MARK: Private
+    
+    fileprivate func registerNotification(with model: T) {
+        let request = model.makeNotificationRequest()
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: { (error) in
+            if let error = error {
+                print("error registering notification: \(error.localizedDescription)")
+            }
+        })
+    }
+}
+
+//MARK: Rx Extensions
+
+extension NotificationManager {
+    
+    func authorize() -> Observable<NotificationAuthStatus> {
         return Observable.create { observer in
             observer.onNext(.unknown)
             
@@ -34,35 +59,17 @@ struct NotificationManager {
             return Disposables.create()
         }
     }
+}
+
+extension NotificationManager: ObserverType {
+    typealias E = T
     
-    func registerNotifications(for launches: [Launch]) {
-        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
-        
-        for launch in launches {
-            let date = launch.startDate.addingTimeInterval(-.oneHour)
-            let components = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
-            
-            let content = UNMutableNotificationContent()
-            var title = launch.rocketName
-            if let missionName = launch.missionName, !missionName.isEmpty {
-                title = "\(title) - \(missionName)"
-            }
-            content.title = title
-            content.body = "The launch window is scheduled to open in one hour."
-            
-            let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: false)
-            let identifier = identifierForLaunch(launch)
-            let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
-            UNUserNotificationCenter.current().add(request, withCompletionHandler: { (error) in
-                if let error = error {
-                    print("error registering notification: \(error.localizedDescription)")
-                }
-            })
+    func on(_ event: Event<T>) {
+        switch event {
+        case .next(let model):
+            registerNotification(with: model)
+        default:
+            break
         }
-    }
-    
-    private func identifierForLaunch(_ launch: Launch) -> String {
-        let dateString = DateFormatter.apiISOFormatter.string(from: launch.startDate)
-        return "\(launch.missionName ?? launch.rocketName).\(dateString)"
     }
 }
