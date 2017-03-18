@@ -17,7 +17,7 @@ PODS:
 DEPENDENCIES:
   - Moya/RxSwift (~> 8.0)
   - RxCocoa (~> 3.2)
-  - RxSwiftExt
+  - RxSwiftExt (~> 2.1)
   - SwiftyJSON (~> 3.1)
 
 SPEC CHECKSUMS:
@@ -29,6 +29,6 @@ SPEC CHECKSUMS:
   RxSwiftExt: 492a6575cf6afabb8feeed3204bd0f9e2c695e67
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 72d07fc88eb13ed59cb75762f1c781983d54987c
+PODFILE CHECKSUM: fb6e3f3345c9ccc522a22bccd905d4a3e4ae8c16
 
 COCOAPODS: 1.2.0.beta.3

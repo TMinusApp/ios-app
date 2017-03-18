@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3917DD6CE53C46A6B49B5C77 /* Pods_TMinus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3815ACB65F76BA8867DFA6B4 /* Pods_TMinus.framework */; };
 		6D43B6D1FFD7ACAF92E0FE06 /* Pods_T_Minus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4792F123FDBF8D05386C92 /* Pods_T_Minus.framework */; };
 		7534A6B01E749425001A817B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7534A6AF1E749425001A817B /* AppDelegate.swift */; };
 		7534A6B21E749425001A817B /* LaunchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7534A6B11E749425001A817B /* LaunchesViewController.swift */; };
@@ -20,6 +19,7 @@
 		7534A6CD1E74BB2D001A817B /* LaunchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7534A6CC1E74BB2D001A817B /* LaunchCell.swift */; };
 		7534A6D01E75FA69001A817B /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7534A6CF1E75FA69001A817B /* Launch.swift */; };
 		7534A6D81E76437C001A817B /* PageLoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7534A6D71E76437C001A817B /* PageLoadingCell.swift */; };
+		75B380FD1E7D010D00EA19FF /* BlockObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B380FC1E7D010D00EA19FF /* BlockObserver.swift */; };
 		75CD87AB1E7CF43C00941511 /* NotificationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CD87AA1E7CF43C00941511 /* NotificationType.swift */; };
 		75CD87AD1E7CF97D00941511 /* BackgroundNotificationRegistrar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CD87AC1E7CF97D00941511 /* BackgroundNotificationRegistrar.swift */; };
 		75D61E131E779DD1009D4BAB /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D61E121E779DD1009D4BAB /* NotificationManager.swift */; };
@@ -47,6 +47,7 @@
 		7534A6CC1E74BB2D001A817B /* LaunchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchCell.swift; sourceTree = "<group>"; };
 		7534A6CF1E75FA69001A817B /* Launch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
 		7534A6D71E76437C001A817B /* PageLoadingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageLoadingCell.swift; sourceTree = "<group>"; };
+		75B380FC1E7D010D00EA19FF /* BlockObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockObserver.swift; sourceTree = "<group>"; };
 		75CD87AA1E7CF43C00941511 /* NotificationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationType.swift; sourceTree = "<group>"; };
 		75CD87AC1E7CF97D00941511 /* BackgroundNotificationRegistrar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundNotificationRegistrar.swift; sourceTree = "<group>"; };
 		75D61E121E779DD1009D4BAB /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
@@ -65,7 +66,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3917DD6CE53C46A6B49B5C77 /* Pods_TMinus.framework in Frameworks */,
 				6D43B6D1FFD7ACAF92E0FE06 /* Pods_T_Minus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -79,6 +79,7 @@
 				BEF79DD61E77576F00C3F61D /* LaunchTextProvider.swift */,
 				75D61E121E779DD1009D4BAB /* NotificationManager.swift */,
 				75CD87AC1E7CF97D00941511 /* BackgroundNotificationRegistrar.swift */,
+				75B380FC1E7D010D00EA19FF /* BlockObserver.swift */,
 			);
 			name = Business;
 			sourceTree = "<group>";
@@ -351,6 +352,7 @@
 				7534A6C51E74A000001A817B /* API+Moya.swift in Sources */,
 				BEF79DD71E77576F00C3F61D /* LaunchTextProvider.swift in Sources */,
 				7534A6CD1E74BB2D001A817B /* LaunchCell.swift in Sources */,
+				75B380FD1E7D010D00EA19FF /* BlockObserver.swift in Sources */,
 				75CD87AB1E7CF43C00941511 /* NotificationType.swift in Sources */,
 				BEF79DD91E77599900C3F61D /* UIView+Additions.swift in Sources */,
 				BEF79DDB1E775A5100C3F61D /* LoadingView.swift in Sources */,

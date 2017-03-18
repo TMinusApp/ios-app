@@ -21,12 +21,10 @@ struct NotificationManager<T: NotificationType> {
     }
     
     func registerNotifications(for models: [T]) {
-        models.forEach { self.registerNotification(with: $0) }
+        models.forEach { self.registerNotification(for: $0) }
     }
     
-    // MARK: Private
-    
-    fileprivate func registerNotification(with model: T) {
+    func registerNotification(for model: T) {
         let request = model.makeNotificationRequest()
         UNUserNotificationCenter.current().add(request, withCompletionHandler: { (error) in
             if let error = error {
@@ -67,7 +65,7 @@ extension NotificationManager: ObserverType {
     func on(_ event: Event<T>) {
         switch event {
         case .next(let model):
-            registerNotification(with: model)
+            registerNotification(for: model)
         default:
             break
         }

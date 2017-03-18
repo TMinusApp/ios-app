@@ -11,12 +11,16 @@ import Moya
 import RxSwift
 import RxSwiftExt
 
+/// Used to register local notifications for launches during background fetch
 struct BackgroundNotificationRegistrar {
 
     private let provider = RxMoyaProvider<API>()
     private let notificationManager = NotificationManager<Launch>()
     private let disposeBag = DisposeBag()
     
+    /// Fetches the first page of launches and registers notifications
+    ///
+    /// - Parameter completion: the block passed by the system to the background fetch method of the app delegate
     func register(with completion: @escaping (UIBackgroundFetchResult) -> Void) {
         let launches = provider.request(.showLaunches(page: 0))
         let authorize = notificationManager.authorize()
@@ -25,33 +29,13 @@ struct BackgroundNotificationRegistrar {
             return authStatus == .granted ? launchResponse : nil
             }
             .unwrap()
+            .do(onNext: { _ in
+                self.notificationManager.removePendingNotifications()
+            })
             .mapModel(model: Launch.self) { $0["launches"] }
             .bindTo(BlockObserver(notificationManager) { error in
                 completion(error == nil ? .newData : .failed)
             })
             .disposed(by: disposeBag)
-    }
-}
-
-struct BlockObserver<T: ObserverType, U>: ObserverType where U == T.E {
-    typealias E = U
-    private let child: T
-    private let completion: (Swift.Error?) -> ()
-    
-    init(_ child: T, completion: @escaping (Swift.Error?) -> ()) {
-        self.child = child
-        self.completion = completion
-    }
-    
-    func on(_ event: Event<U>) {
-        child.on(event)
-        switch event {
-        case .completed:
-            completion(nil)
-        case .error(let error):
-            completion(error)
-        default:
-            break
-        }
     }
 }
