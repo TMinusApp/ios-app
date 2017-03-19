@@ -13,22 +13,20 @@ struct Agency: JSONModel {
     let name: String
     let abbreviation: String
     let countryCode: String
-    let infoURL: URL
-    let wikiURL: URL
+    let infoURL: URL?
+    let wikiURL: URL?
     
     init?(json: JSON) {
         guard let id = json["id"].int,
             let name = json["name"].string,
             let abbreviation = json["abbrev"].string,
-            let countryCode = json["countryCode"].string,
-            let infoURL = json["infoURL"].string.flatMap({ URL(string: $0) }),
-            let wikiURL = json["wikiURL"].string.flatMap({ URL(string: $0) }) else { assertionFailure(); return nil }
+            let countryCode = json["countryCode"].string else { assertionFailure(); return nil }
         
         self.id = id
         self.name = name
         self.abbreviation = abbreviation
         self.countryCode = countryCode
-        self.infoURL = infoURL
-        self.wikiURL = wikiURL
+        self.infoURL = json["infoURL"].string.flatMap({ URL(string: $0) })
+        self.wikiURL = json["wikiURL"].string.flatMap({ URL(string: $0) })
     }
 }

@@ -14,7 +14,7 @@ struct Rocket: JSONModel {
     let configuration: String
     let familyName: String
     let agencies: [Agency]
-    let wikiURL: URL
+    let wikiURL: URL?
     let imageURL: URL
     
     init?(json: JSON) {
@@ -22,7 +22,6 @@ struct Rocket: JSONModel {
             let name = json["name"].string,
             let configuration = json["configuration"].string,
             let familyName = json["familyname"].string,
-            let wikiURL = json["wikiURL"].string.flatMap({ URL(string: $0) }),
             let imageURL = json["imageURL"].string.flatMap({ URL(string: $0) }) else { assertionFailure(); return nil }
         
         self.id = id
@@ -30,7 +29,7 @@ struct Rocket: JSONModel {
         self.configuration = configuration
         self.familyName = familyName
         self.agencies = (json["agencies"].array ?? []).flatMap { Agency(json: $0) }
-        self.wikiURL = wikiURL
+        self.wikiURL = json["wikiURL"].string.flatMap({ URL(string: $0) })
         self.imageURL = imageURL
     }
 }
