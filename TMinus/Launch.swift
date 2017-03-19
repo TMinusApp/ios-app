@@ -43,7 +43,7 @@ struct Launch: JSONModel {
             let windowCloseDate = json["isoend"].string.flatMap(Date.fromAPIISODateString),
             let probability = json["probability"].double.flatMap({ $0/100.0 }),
             let dateIsUncertain = json["tbddate"].int.flatMap({ $0 == 1 }),
-            let timeIsUncertain = json["tbdtime"].int.flatMap({ $0 == 1 }) else { return nil }
+            let timeIsUncertain = json["tbdtime"].int.flatMap({ $0 == 1 }) else { assertionFailure(); return nil }
         
         self.id = id
         self.name = name

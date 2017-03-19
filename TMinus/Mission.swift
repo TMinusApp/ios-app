@@ -18,7 +18,7 @@ struct Mission: JSONModel {
         guard let id = json["id"].int,
             let name = json["name"].string,
             let description = json["description"].string,
-            let type = json["typeName"].string else { return nil }
+            let type = json["typeName"].string else { assertionFailure(); return nil }
         
         self.id = id
         self.name = name

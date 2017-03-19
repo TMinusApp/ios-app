@@ -22,7 +22,7 @@ struct Agency: JSONModel {
             let abbreviation = json["abbrev"].string,
             let countryCode = json["countryCode"].string,
             let infoURL = json["infoURL"].string.flatMap({ URL(string: $0) }),
-            let wikiURL = json["wikiURL"].string.flatMap({ URL(string: $0) }) else { return nil }
+            let wikiURL = json["wikiURL"].string.flatMap({ URL(string: $0) }) else { assertionFailure(); return nil }
         
         self.id = id
         self.name = name

@@ -23,7 +23,7 @@ struct Rocket: JSONModel {
             let configuration = json["configuration"].string,
             let familyName = json["familyname"].string,
             let wikiURL = json["wikiURL"].string.flatMap({ URL(string: $0) }),
-            let imageURL = json["imageURL"].string.flatMap({ URL(string: $0) }) else { return nil }
+            let imageURL = json["imageURL"].string.flatMap({ URL(string: $0) }) else { assertionFailure(); return nil }
         
         self.id = id
         self.name = name

@@ -88,6 +88,38 @@
         ],
         "imageURL": "https://s3.amazonaws.com/launchlibrary/RocketImages/Atlas+V+401_2560.jpg"
     },
+    "location": {
+        "pads": [
+            {
+                "id": 138,
+                "name": "Yoshinobu Launch Complex, Tanegashima, Japan",
+                "infoURL": "",
+                "wikiURL": "",
+                "mapURL": "",
+                "latitude": 30.399,
+                "longitude": 130.97,
+                "agencies": [
+                    {
+                        "id": 37,
+                        "name": "Japan Aerospace Exploration Agency",
+                        "abbrev": "JAXA",
+                        "countryCode": "JPN",
+                        "type": 1,
+                        "infoURL": "http://www.jaxa.jp/",
+                        "wikiURL": "http://en.wikipedia.org/wiki/Japan_Aerospace_Exploration_Agency",
+                        "infoURLs": [
+                            "http://www.jaxa.jp/"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "id": 9,
+        "name": "Tanegashima, Japan",
+        "infoURL": "",
+        "wikiURL": "",
+        "countryCode": "JPN"
+    },
     "missions": [
         {
             "id": 172,
