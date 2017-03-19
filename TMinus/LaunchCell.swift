@@ -23,11 +23,11 @@ class LaunchCell: UITableViewCell {
     private let textProvider = LaunchTextProvider()
     
     func configure(with launch: Launch) {
-        rocketLabel.text = launch.rocketName
-        missionLabel.text = launch.missionName
+        rocketLabel.text = launch.rocket.name
+        missionLabel.text = launch.missions.first?.name
         probabilityLabel.text = textProvider.probabilityString(from: launch.probability)
         
-        let isHidden = (launch.missionName ?? "").isEmpty
+        let isHidden = (launch.missions.first?.name ?? "").isEmpty
         missionLabel.isHidden = isHidden
         missionIconView.isHidden = isHidden
         
@@ -38,7 +38,7 @@ class LaunchCell: UITableViewCell {
     //MARK: Private
     
     private func scheduleTimerIfNecessary(for launch: Launch) {
-        let timeUntil = launch.startDate.timeIntervalSinceNow
+        let timeUntil = launch.windowOpenDate.timeIntervalSinceNow
         if timeUntil < .oneDay * 2 {
             timer = Timer(timeInterval: 0.25, repeats: true) { [weak self] timer in
                 self?.configureTimeLabel(with: launch)
@@ -51,6 +51,6 @@ class LaunchCell: UITableViewCell {
     }
     
     private func configureTimeLabel(with launch: Launch) {
-        timeLabel.text = textProvider.countdownString(from: launch.startDate)
+        timeLabel.text = textProvider.countdownString(from: launch.windowOpenDate)
     }
 }
