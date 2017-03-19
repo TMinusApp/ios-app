@@ -31,6 +31,9 @@ struct Launch: JSONModel {
     let dateIsUncertain: Bool
     /// If this is true, the times are not 100% certain
     let timeIsUncertain: Bool
+    let failReason: String?
+    let holdReason: String?
+    let hashtag: String?
     
     init?(json: JSON) {
         guard let id = json["id"].int,
@@ -55,6 +58,9 @@ struct Launch: JSONModel {
         }
         self.dateIsUncertain = dateIsUncertain
         self.timeIsUncertain = timeIsUncertain
+        self.failReason = json["failreason"].string
+        self.holdReason = json["holdreason"].string
+        self.hashtag = json["hashtag"].string
     }
 }
 

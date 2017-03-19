@@ -22,6 +22,7 @@
 		7546D1381E7E462100EA3608 /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7546D1371E7E462100EA3608 /* Rocket.swift */; };
 		7546D13A1E7E4B7500EA3608 /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7546D1391E7E4B7500EA3608 /* Mission.swift */; };
 		7546D13C1E7E4BF500EA3608 /* sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 7546D13B1E7E4BF500EA3608 /* sample.json */; };
+		7546D13E1E7E570300EA3608 /* Agency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7546D13D1E7E570300EA3608 /* Agency.swift */; };
 		75B380FD1E7D010D00EA19FF /* BlockObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B380FC1E7D010D00EA19FF /* BlockObserver.swift */; };
 		75CD87AB1E7CF43C00941511 /* NotificationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CD87AA1E7CF43C00941511 /* NotificationType.swift */; };
 		75CD87AD1E7CF97D00941511 /* BackgroundNotificationRegistrar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CD87AC1E7CF97D00941511 /* BackgroundNotificationRegistrar.swift */; };
@@ -53,6 +54,7 @@
 		7546D1371E7E462100EA3608 /* Rocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rocket.swift; sourceTree = "<group>"; };
 		7546D1391E7E4B7500EA3608 /* Mission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
 		7546D13B1E7E4BF500EA3608 /* sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sample.json; sourceTree = "<group>"; };
+		7546D13D1E7E570300EA3608 /* Agency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Agency.swift; sourceTree = "<group>"; };
 		75B380FC1E7D010D00EA19FF /* BlockObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockObserver.swift; sourceTree = "<group>"; };
 		75CD87AA1E7CF43C00941511 /* NotificationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationType.swift; sourceTree = "<group>"; };
 		75CD87AC1E7CF97D00941511 /* BackgroundNotificationRegistrar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundNotificationRegistrar.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				7534A6CF1E75FA69001A817B /* Launch.swift */,
 				75CD87AA1E7CF43C00941511 /* NotificationType.swift */,
 				7546D1371E7E462100EA3608 /* Rocket.swift */,
+				7546D13D1E7E570300EA3608 /* Agency.swift */,
 				7546D1391E7E4B7500EA3608 /* Mission.swift */,
 			);
 			name = Model;
@@ -376,6 +379,7 @@
 				75D61E151E7B8B67009D4BAB /* JSONModel.swift in Sources */,
 				7534A6C31E749ED7001A817B /* API.swift in Sources */,
 				7546D13A1E7E4B7500EA3608 /* Mission.swift in Sources */,
+				7546D13E1E7E570300EA3608 /* Agency.swift in Sources */,
 				7534A6B01E749425001A817B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
