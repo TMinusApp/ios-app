@@ -34,6 +34,7 @@ struct Launch: JSONModel {
     let failReason: String?
     let holdReason: String?
     let hashtag: String?
+    let location: Location
     
     init?(json: JSON) {
         guard let id = json["id"].int,
@@ -43,7 +44,8 @@ struct Launch: JSONModel {
             let windowCloseDate = json["isoend"].string.flatMap(Date.fromAPIISODateString),
             let probability = json["probability"].double.flatMap({ $0/100.0 }),
             let dateIsUncertain = json["tbddate"].int.flatMap({ $0 == 1 }),
-            let timeIsUncertain = json["tbdtime"].int.flatMap({ $0 == 1 }) else { assertionFailure(); return nil }
+            let timeIsUncertain = json["tbdtime"].int.flatMap({ $0 == 1 }),
+            let location = Location(json: json["location"]) else { assertionFailure(); return nil }
         
         self.id = id
         self.name = name
@@ -61,6 +63,7 @@ struct Launch: JSONModel {
         self.failReason = json["failreason"].string
         self.holdReason = json["holdreason"].string
         self.hashtag = json["hashtag"].string
+        self.location = location
     }
 }
 
