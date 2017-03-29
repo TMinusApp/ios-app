@@ -42,6 +42,8 @@ class LaunchesViewController: UIViewController {
     private var isFetching = false
     private var loadingView = LoadingView()
     
+    //MARK: Superclass
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,6 +52,15 @@ class LaunchesViewController: UIViewController {
         
         loadingView.showInView(view)
         fetchNextPage()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        guard segue.identifier == SegueID.settings,
+            let navController = segue.destination as? UINavigationController,
+            let viewController = navController.topViewController as? SettingsViewController else { return }
+        
+        viewController.delegate = self
     }
     
     //MARK: Private
@@ -159,5 +170,12 @@ extension LaunchesViewController: UITableViewDelegate {
             // 60 points from the bottom of the list
             fetchNextPage()
         }
+    }
+}
+
+extension LaunchesViewController: SettingsViewControllerDelegate {
+    
+    func settingsViewControllerFinished(_ viewController: SettingsViewController) {
+        dismiss(animated: true, completion: nil)
     }
 }

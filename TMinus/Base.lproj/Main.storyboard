@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jeZ-Sp-WDD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jeZ-Sp-WDD">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Launches-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LaunchesViewController" customModule="TMinus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LaunchesViewController" customModule="T_Minus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -25,11 +26,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LaunchCell" rowHeight="84" id="r13-En-dvY" customClass="LaunchCell" customModule="TMinus" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LaunchCell" rowHeight="84" id="r13-En-dvY" customClass="LaunchCell" customModule="T_Minus" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r13-En-dvY" id="gqy-Pw-FWh">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="83"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="83.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rocket" translatesAutoresizingMaskIntoConstraints="NO" id="Xex-5C-KM1">
@@ -98,11 +99,11 @@
                                             <outlet property="timeLabel" destination="Duv-BV-DuQ" id="HC7-v0-JLr"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PageLoadingCell" rowHeight="57" id="FV2-4p-nrP" userLabel="PageCell" customClass="PageLoadingCell" customModule="TMinus" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PageLoadingCell" rowHeight="57" id="FV2-4p-nrP" userLabel="PageCell" customClass="PageLoadingCell" customModule="T_Minus" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="112" width="375" height="57"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FV2-4p-nrP" id="sy4-WZ-o7V">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="56.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="hes-u3-f4l">
@@ -134,7 +135,13 @@
                             <constraint firstItem="tig-L7-qpS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="iHc-yd-rBT"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Launches" id="6vn-Xz-b18"/>
+                    <navigationItem key="navigationItem" title="Launches" id="6vn-Xz-b18">
+                        <barButtonItem key="rightBarButtonItem" image="settings" id="Q6x-qw-Msh">
+                            <connections>
+                                <segue destination="Rha-zs-0Ip" kind="presentation" identifier="SegueID.settings" id="dDa-Wa-GAU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="tig-L7-qpS" id="TCt-le-vM5"/>
                     </connections>
@@ -142,6 +149,63 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rZz-hz-mD2">
+            <objects>
+                <navigationController id="Rha-zs-0Ip" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gWB-DE-XuP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vMM-1m-AnR" kind="relationship" relationship="rootViewController" id="E1y-hC-Hdr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="84D-V5-ft8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137" y="-555"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="IvJ-Sg-PhA">
+            <objects>
+                <viewController id="vMM-1m-AnR" customClass="SettingsViewController" customModule="T_Minus" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="w4Z-CX-xZ8"/>
+                        <viewControllerLayoutGuide type="bottom" id="FHW-f3-IJc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="G0R-zH-Bld">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Background fetch label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o3f-Es-HVL">
+                                <rect key="frame" x="16" y="72" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="o3f-Es-HVL" firstAttribute="trailing" secondItem="G0R-zH-Bld" secondAttribute="trailingMargin" id="7kn-g7-ChW"/>
+                            <constraint firstItem="o3f-Es-HVL" firstAttribute="top" secondItem="w4Z-CX-xZ8" secondAttribute="bottom" constant="8" id="fow-cN-zmP"/>
+                            <constraint firstItem="o3f-Es-HVL" firstAttribute="leading" secondItem="G0R-zH-Bld" secondAttribute="leadingMargin" id="hF6-xY-gtb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="a68-jV-zzp">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="dfs-Em-2Z6">
+                            <connections>
+                                <action selector="doneButtonPressed:" destination="vMM-1m-AnR" id="yVY-RM-d2T"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="fetchesLabel" destination="o3f-Es-HVL" id="LdB-9H-a8j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xqm-zA-nz4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928.79999999999995" y="-555.47226386806597"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="RNk-gf-l0g">
@@ -218,5 +282,6 @@
     <resources>
         <image name="rocket" width="100" height="100"/>
         <image name="satellite" width="71" height="71"/>
+        <image name="settings" width="32" height="32"/>
     </resources>
 </document>

@@ -20,6 +20,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        registrar.register { [weak self] (result) in
+            if result == .newData {
+                self?.updateRegistrationCount()
+            }
+            completionHandler(result)
+        }
         registrar.register(with: completionHandler)
+    }
+    
+    //MARK: Private
+    
+    private func updateRegistrationCount() {
+        let count = UserDefaults.standard.integer(forKey: UserDefaultsKey.backgroundFetchCount)
+        UserDefaults.standard.set(count + 1, forKey: UserDefaultsKey.backgroundFetchCount)
+        UserDefaults.standard.synchronize()
     }
 }
