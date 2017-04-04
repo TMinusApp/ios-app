@@ -13,7 +13,10 @@ import RxSwiftExt
 
 /// Used to register local notifications for launches during background fetch
 struct BackgroundNotificationRegistrar {
-
+    enum RegistrarError: Swift.Error {
+        case notAuthorized
+    }
+    
     private let provider = RxMoyaProvider<API>()
     private let notificationManager = NotificationManager<Launch>()
     private let disposeBag = DisposeBag()
@@ -22,13 +25,15 @@ struct BackgroundNotificationRegistrar {
     ///
     /// - Parameter completion: the block passed by the system to the background fetch method of the app delegate
     func register(with completion: @escaping (UIBackgroundFetchResult) -> Void) {
-        let launches = provider.request(.showLaunches(page: 0))
-        let authorize = notificationManager.authorize()
         
-        Observable.combineLatest(launches, authorize) { launchResponse, authStatus in
-            return authStatus == .granted ? launchResponse : nil
+        notificationManager.checkAuthStatus()
+            .flatMap { authStatus -> Observable<Response> in
+                if authStatus == .granted {
+                    return self.provider.request(.showLaunches(page: 0))
+                } else {
+                    throw RegistrarError.notAuthorized
+                }
             }
-            .unwrap()
             .do(onNext: { _ in
                 self.notificationManager.removePendingNotifications()
             })

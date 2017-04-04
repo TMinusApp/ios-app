@@ -15,7 +15,7 @@ struct LaunchTextProvider {
         if timeUntil < .oneDay * 2 {
             return shortCountdownString(with: timeUntil)
         } else {
-            return longCountdownString(with: timeUntil)
+            return longCountdownString(with: date)
         }
     }
     
@@ -30,22 +30,24 @@ struct LaunchTextProvider {
         return "T- \(hoursString):\(minutesString):\(secondsString)"
     }
     
-    func longCountdownString(with secondsUntil: TimeInterval) -> String {
-        if secondsUntil > .oneWeek {
-            let weeks = Int(secondsUntil / .oneWeek)
-            return weeks == 1 ? "1 week" : "\(weeks) weeks"
-        } else if secondsUntil > .oneDay {
-            let days = Int(secondsUntil / .oneDay)
-            return days == 1 ? "1 day" : "\(days) days"
-        } else if secondsUntil > .oneHour {
-            let hours = Int(secondsUntil / .oneHour)
-            return hours == 1 ? "1 hour" : "\(hours) hours"
-        } else if secondsUntil > .oneMinute {
-            let minutes = Int(secondsUntil / .oneMinute)
-            return minutes == 1 ? "1 minute" : "\(minutes) days"
+    func longCountdownString(with date: Date) -> String {
+        let components = Calendar.current.dateComponents([.day, .year, .month], from: Date(timeIntervalSinceNow: .oneDay))
+        let tomorrowDate = Calendar.current.date(from: components) ?? .distantPast
+        let timeString = DateFormatter.countdownTimeFormatter.string(from: date).lowercased()
+        
+        if date < tomorrowDate {
+            // date is today
+            return "Today at \(timeString)"
+        } else if date < tomorrowDate.addingTimeInterval(.oneDay) {
+            // date is tomorrow
+            return "Tomorrow at \(timeString)"
+        } else if date < tomorrowDate.addingTimeInterval(.oneDay * 6) {
+            // date is this week
+            let weekday = DateFormatter.weekdayFormatter.string(from: date)
+            return "\(weekday) at \(timeString)"
         } else {
-            let seconds = Int(secondsUntil)
-            return seconds == 1 ? "1 second" : "\(seconds) seconds"
+            let dateString = DateFormatter.longCountdownFormatter.string(from: date)
+            return "\(dateString) at \(timeString)"
         }
     }
     

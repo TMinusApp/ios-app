@@ -21,6 +21,18 @@ extension DateFormatter {
                                 timeZone: TimeZone(secondsFromGMT: 0) ?? TimeZone.current)
     }
     
+    static var countdownTimeFormatter: DateFormatter {
+        return getDateFormatter(with: "h:mma") // 5:45PM
+    }
+    
+    static var weekdayFormatter: DateFormatter {
+        return getDateFormatter(with: "cccc") // Tuesday
+    }
+    
+    static var longCountdownFormatter: DateFormatter {
+        return getDateFormatter(with: "ccc, LLL dd") // Tues, Sept 12
+    }
+    
     //MARK: Private
     
     private static func getDateFormatter(with format: String, locale: Locale = Locale.current, timeZone: TimeZone = TimeZone.current) -> DateFormatter {

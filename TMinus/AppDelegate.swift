@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let registrar = BackgroundNotificationRegistrar()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
+        application.setMinimumBackgroundFetchInterval(.oneHour)
         return true
     }
     
@@ -26,7 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             completionHandler(result)
         }
-        registrar.register(with: completionHandler)
     }
     
     //MARK: Private

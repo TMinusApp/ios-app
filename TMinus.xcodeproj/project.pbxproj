@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		6D43B6D1FFD7ACAF92E0FE06 /* Pods_T_Minus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4792F123FDBF8D05386C92 /* Pods_T_Minus.framework */; };
+		751ECD8F1E93512200610A5E /* T_MinusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751ECD8E1E93512200610A5E /* T_MinusTests.swift */; };
+		751ECD961E9351D600610A5E /* LaunchTextProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF79DD61E77576F00C3F61D /* LaunchTextProvider.swift */; };
+		751ECD971E9351F200610A5E /* TimeInterval+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF79DD41E77570200C3F61D /* TimeInterval+Additions.swift */; };
+		751ECD981E9355CC00610A5E /* DateFormatter+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7534A6C71E74A374001A817B /* DateFormatter+Additions.swift */; };
 		7534A6B01E749425001A817B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7534A6AF1E749425001A817B /* AppDelegate.swift */; };
 		7534A6B21E749425001A817B /* LaunchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7534A6B11E749425001A817B /* LaunchesViewController.swift */; };
 		7534A6B51E749425001A817B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7534A6B31E749425001A817B /* Main.storyboard */; };
@@ -37,10 +41,23 @@
 		BEF79DDB1E775A5100C3F61D /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF79DDA1E775A5100C3F61D /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		751ECD911E93512200610A5E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7534A6A41E749425001A817B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7534A6AB1E749425001A817B;
+			remoteInfo = "T-Minus";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		2111D873ACB18110BFDB842A /* Pods-T-Minus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-T-Minus.release.xcconfig"; path = "Pods/Target Support Files/Pods-T-Minus/Pods-T-Minus.release.xcconfig"; sourceTree = "<group>"; };
 		3815ACB65F76BA8867DFA6B4 /* Pods_TMinus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TMinus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CE89ACD474F838A039DEF75 /* Pods-TMinus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMinus.release.xcconfig"; path = "Pods/Target Support Files/Pods-TMinus/Pods-TMinus.release.xcconfig"; sourceTree = "<group>"; };
+		751ECD8C1E93512200610A5E /* T-MinusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "T-MinusTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		751ECD8E1E93512200610A5E /* T_MinusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T_MinusTests.swift; sourceTree = "<group>"; };
+		751ECD901E93512200610A5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7534A6AC1E749425001A817B /* T-Minus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "T-Minus.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7534A6AF1E749425001A817B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7534A6B11E749425001A817B /* LaunchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +93,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		751ECD891E93512200610A5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7534A6A91E749425001A817B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -87,6 +111,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		751ECD8D1E93512200610A5E /* T-MinusTests */ = {
+			isa = PBXGroup;
+			children = (
+				751ECD8E1E93512200610A5E /* T_MinusTests.swift */,
+				751ECD901E93512200610A5E /* Info.plist */,
+			);
+			path = "T-MinusTests";
+			sourceTree = "<group>";
+		};
 		7523EAD11E76626E00A52449 /* Business */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				7534A6AE1E749425001A817B /* TMinus */,
+				751ECD8D1E93512200610A5E /* T-MinusTests */,
 				7534A6AD1E749425001A817B /* Products */,
 				ABF5509A25A2DEBE78E9CCA7 /* Pods */,
 				D66249A0814A056AF258FFD0 /* Frameworks */,
@@ -112,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				7534A6AC1E749425001A817B /* T-Minus.app */,
+				751ECD8C1E93512200610A5E /* T-MinusTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -243,6 +278,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		751ECD8B1E93512200610A5E /* T-MinusTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 751ECD951E93512200610A5E /* Build configuration list for PBXNativeTarget "T-MinusTests" */;
+			buildPhases = (
+				751ECD881E93512200610A5E /* Sources */,
+				751ECD891E93512200610A5E /* Frameworks */,
+				751ECD8A1E93512200610A5E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				751ECD921E93512200610A5E /* PBXTargetDependency */,
+			);
+			name = "T-MinusTests";
+			productName = "T-MinusTests";
+			productReference = 751ECD8C1E93512200610A5E /* T-MinusTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		7534A6AB1E749425001A817B /* T-Minus */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7534A6BE1E749425001A817B /* Build configuration list for PBXNativeTarget "T-Minus" */;
@@ -269,10 +322,16 @@
 		7534A6A41E749425001A817B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0820;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Claybrook Software";
 				TargetAttributes = {
+					751ECD8B1E93512200610A5E = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = 4SGAZDJL4U;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 7534A6AB1E749425001A817B;
+					};
 					7534A6AB1E749425001A817B = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 4SGAZDJL4U;
@@ -299,11 +358,19 @@
 			projectRoot = "";
 			targets = (
 				7534A6AB1E749425001A817B /* T-Minus */,
+				751ECD8B1E93512200610A5E /* T-MinusTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		751ECD8A1E93512200610A5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7534A6AA1E749425001A817B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -366,6 +433,17 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		751ECD881E93512200610A5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				751ECD981E9355CC00610A5E /* DateFormatter+Additions.swift in Sources */,
+				751ECD971E9351F200610A5E /* TimeInterval+Additions.swift in Sources */,
+				751ECD961E9351D600610A5E /* LaunchTextProvider.swift in Sources */,
+				751ECD8F1E93512200610A5E /* T_MinusTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7534A6A81E749425001A817B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -398,6 +476,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		751ECD921E93512200610A5E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7534A6AB1E749425001A817B /* T-Minus */;
+			targetProxy = 751ECD911E93512200610A5E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		7534A6B31E749425001A817B /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -418,6 +504,38 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		751ECD931E93512200610A5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = 4SGAZDJL4U;
+				INFOPLIST_FILE = "T-MinusTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.claybrooksoftware.T-MinusTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/T-Minus.app/T-Minus";
+			};
+			name = Debug;
+		};
+		751ECD941E93512200610A5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = 4SGAZDJL4U;
+				INFOPLIST_FILE = "T-MinusTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.claybrooksoftware.T-MinusTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/T-Minus.app/T-Minus";
+			};
+			name = Release;
+		};
 		7534A6BC1E749425001A817B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -540,6 +658,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		751ECD951E93512200610A5E /* Build configuration list for PBXNativeTarget "T-MinusTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				751ECD931E93512200610A5E /* Debug */,
+				751ECD941E93512200610A5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		7534A6A71E749425001A817B /* Build configuration list for PBXProject "TMinus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

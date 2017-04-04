@@ -38,6 +38,23 @@ struct NotificationManager<T: NotificationType> {
 
 extension NotificationManager {
     
+    func checkAuthStatus() -> Observable<NotificationAuthStatus> {
+        return Observable.create { observer in
+            UNUserNotificationCenter.current().getNotificationSettings { settings in
+                switch settings.authorizationStatus {
+                case .notDetermined,
+                     .denied:
+                    observer.onNext(.denied)
+                case .authorized:
+                    observer.onNext(.granted)
+                }
+                observer.onCompleted()
+            }
+            
+            return Disposables.create()
+        }
+    }
+    
     func authorize() -> Observable<NotificationAuthStatus> {
         return Observable.create { observer in
             observer.onNext(.unknown)
