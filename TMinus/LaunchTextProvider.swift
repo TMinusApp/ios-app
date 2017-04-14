@@ -12,7 +12,7 @@ struct LaunchTextProvider {
     
     func countdownString(from date: Date) -> String {
         let timeUntil = date.timeIntervalSinceNow
-        if timeUntil < .oneDay * 2 {
+        if timeUntil < .oneHour * 6 {
             return shortCountdownString(with: timeUntil)
         } else {
             return longCountdownString(with: date)
@@ -51,15 +51,13 @@ struct LaunchTextProvider {
         }
     }
     
-    func probabilityString(from probability: Double) -> String {
+    func probabilityString(from probability: Double?) -> String {
+        guard let probability = probability else { return "" }
         let percentage = Int(round(probability * 100.0))
         if percentage > 0 {
             return "\(percentage)% Go for launch"
-        } else if probability == 0 {
-            return "No go"
         } else {
-            // -1 means unknown
-            return ""
+            return "No go"
         }
     }
 }

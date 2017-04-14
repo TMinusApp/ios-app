@@ -14,4 +14,5 @@ struct UserDefaultsKey {
 
 struct SegueID {
     static let settings = "SegueID.settings"
+    static let launchDetail = "SegueID.launchDetail"
 }

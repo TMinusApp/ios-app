@@ -22,8 +22,11 @@ struct LaunchPageResults {
     }
     
     mutating func appendPage(with launches: [Launch], total: Int) {
-        self.launches.append(contentsOf: launches)
-        launchTotal = total
+        let now = Date()
+        let toAppend = launches.filter { $0.windowOpenDate > now }
+        let missing = launches.count - toAppend.count
+        launchTotal = total - missing
+        self.launches.append(contentsOf: toAppend)
         pagesFetched += 1
     }
 }
@@ -54,13 +57,25 @@ class LaunchesViewController: UIViewController {
         fetchNextPage()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tableView.indexPathForSelectedRow.do { self.tableView.deselectRow(at: $0, animated: true) }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
-        guard segue.identifier == SegueID.settings,
+        if segue.identifier == SegueID.settings,
             let navController = segue.destination as? UINavigationController,
-            let viewController = navController.topViewController as? SettingsViewController else { return }
-        
-        viewController.delegate = self
+            let viewController = navController.topViewController as? SettingsViewController {
+            
+            viewController.delegate = self
+        } else if segue.identifier == SegueID.launchDetail,
+            let viewController = segue.destination as? LaunchDetailViewController,
+            let cell = sender as? UITableViewCell,
+            let indexPath = tableView.indexPath(for: cell) {
+            
+            viewController.launch = launchResults.launches[indexPath.row]
+        }
     }
     
     //MARK: Private
@@ -158,10 +173,6 @@ extension LaunchesViewController: UITableViewDataSource {
 }
 
 extension LaunchesViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard launchResults.canFetchMoreLaunches else { return }

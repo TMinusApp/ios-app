@@ -24,7 +24,7 @@ struct Launch: JSONModel {
     /// The date the launch window closes. Some launches (such as those to the ISS) have an instantaneous launch window, which can cause this property to be the same as windowOpenDate.
     let windowCloseDate: Date
     /// Percentage between 0.0 - 1.0
-    let probability: Double
+    let probability: Double?
     let status: Status
     let videoURLs: [URL]
     /// If this is true, the dates are not 100% certain
@@ -42,7 +42,6 @@ struct Launch: JSONModel {
             let rocket = Rocket(json: json["rocket"]),
             let windowOpenDate = json["isostart"].string.flatMap(Date.fromAPIISODateString),
             let windowCloseDate = json["isoend"].string.flatMap(Date.fromAPIISODateString),
-            let probability = json["probability"].double.flatMap({ $0/100.0 }),
             let dateIsUncertain = json["tbddate"].int.flatMap({ $0 == 1 }),
             let timeIsUncertain = json["tbdtime"].int.flatMap({ $0 == 1 }),
             let location = Location(json: json["location"]) else { assertionFailure(); return nil }
@@ -53,7 +52,7 @@ struct Launch: JSONModel {
         self.missions = (json["missions"].array ?? []).flatMap { Mission(json: $0) }
         self.windowOpenDate = windowOpenDate
         self.windowCloseDate = windowCloseDate
-        self.probability = probability
+        self.probability = json["probability"].double.flatMap({ $0 == -1 ? nil : $0/100.0 })
         self.status = json["status"].int.flatMap { Status(rawValue: $0) } ?? .unknown
         self.videoURLs = (json["vidURLs"].array ?? []).flatMap {
             $0.string.flatMap({ URL(string: $0) })
