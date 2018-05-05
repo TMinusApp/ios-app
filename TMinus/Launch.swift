@@ -7,11 +7,32 @@
 //
 
 import Foundation
-import SwiftyJSON
 import UserNotifications
 
-struct Launch: JSONModel {
-    enum Status: Int {
+struct LaunchResponse: Codable {
+    let launches: [Launch]
+}
+
+struct Launch: Codable {
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name
+        case rocket
+        case missions
+        case windowOpenDate = "isostart"
+        case windowCloseDate = "isoend"
+        case probability
+        case status
+        case videoURLs = "vidURLs"
+        case dateIsUncertain = "tbddate"
+        case timeIsUncertain = "tbdtime"
+        case failReason = "failreason"
+        case holdReason = "holdreason"
+        case hashtag
+        case location
+    }
+    
+    enum Status: Int, Codable {
         case unknown, green, red, success, failed
     }
     
@@ -28,42 +49,13 @@ struct Launch: JSONModel {
     let status: Status
     let videoURLs: [URL]
     /// If this is true, the dates are not 100% certain
-    let dateIsUncertain: Bool
+    let dateIsUncertain: Int
     /// If this is true, the times are not 100% certain
-    let timeIsUncertain: Bool
+    let timeIsUncertain: Int
     let failReason: String?
     let holdReason: String?
     let hashtag: String?
     let location: Location
-    
-    init?(json: JSON) {
-        guard let id = json["id"].int,
-            let name = json["name"].string,
-            let rocket = Rocket(json: json["rocket"]),
-            let windowOpenDate = json["isostart"].string.flatMap(Date.fromAPIISODateString),
-            let windowCloseDate = json["isoend"].string.flatMap(Date.fromAPIISODateString),
-            let dateIsUncertain = json["tbddate"].int.flatMap({ $0 == 1 }),
-            let timeIsUncertain = json["tbdtime"].int.flatMap({ $0 == 1 }),
-            let location = Location(json: json["location"]) else { assertionFailure(); return nil }
-        
-        self.id = id
-        self.name = name
-        self.rocket = rocket
-        self.missions = (json["missions"].array ?? []).flatMap { Mission(json: $0) }
-        self.windowOpenDate = windowOpenDate
-        self.windowCloseDate = windowCloseDate
-        self.probability = json["probability"].double.flatMap({ $0 == -1 ? nil : $0/100.0 })
-        self.status = json["status"].int.flatMap { Status(rawValue: $0) } ?? .unknown
-        self.videoURLs = (json["vidURLs"].array ?? []).flatMap {
-            $0.string.flatMap({ URL(string: $0) })
-        }
-        self.dateIsUncertain = dateIsUncertain
-        self.timeIsUncertain = timeIsUncertain
-        self.failReason = json["failreason"].string
-        self.holdReason = json["holdreason"].string
-        self.hashtag = json["hashtag"].string
-        self.location = location
-    }
 }
 
 extension Launch: NotificationType {

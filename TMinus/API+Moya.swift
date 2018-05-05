@@ -9,6 +9,10 @@
 import Moya
 
 extension API: TargetType {
+    var headers: [String : String]? {
+        return nil
+    }
+    
     var baseURL: URL {
         return URL(string: "https://launchlibrary.net/1.2")!
     }
@@ -52,6 +56,11 @@ extension API: TargetType {
     }
     
     var task: Task {
-        return .request
+        // TODO: Use Encodable
+        if let parameters = parameters {
+            return .requestParameters(parameters: parameters, encoding: parameterEncoding)
+        } else {
+            return .requestPlain
+        }
     }
 }

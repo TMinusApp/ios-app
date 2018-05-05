@@ -6,9 +6,19 @@
 //  Copyright © 2017 Claybrook Software. All rights reserved.
 //
 
-import SwiftyJSON
+import Foundation
 
-struct Rocket: JSONModel {
+struct Rocket: Codable {
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name
+        case configuration
+        case familyName = "familyname"
+        case agencies
+        case wikiURL
+        case imageURL
+    }
+    
     let id: Int
     let name: String
     let configuration: String
@@ -16,20 +26,4 @@ struct Rocket: JSONModel {
     let agencies: [Agency]
     let wikiURL: URL?
     let imageURL: URL
-    
-    init?(json: JSON) {
-        guard let id = json["id"].int,
-            let name = json["name"].string,
-            let configuration = json["configuration"].string,
-            let familyName = json["familyname"].string,
-            let imageURL = json["imageURL"].string.flatMap({ URL(string: $0) }) else { assertionFailure(); return nil }
-        
-        self.id = id
-        self.name = name
-        self.configuration = configuration
-        self.familyName = familyName
-        self.agencies = (json["agencies"].array ?? []).flatMap { Agency(json: $0) }
-        self.wikiURL = json["wikiURL"].string.flatMap({ URL(string: $0) })
-        self.imageURL = imageURL
-    }
 }

@@ -9,7 +9,6 @@
 import Foundation
 import Moya
 import RxSwift
-import RxSwiftExt
 
 /// Used to register local notifications for launches during background fetch
 struct BackgroundNotificationRegistrar {
@@ -17,7 +16,7 @@ struct BackgroundNotificationRegistrar {
         case notAuthorized
     }
     
-    private let provider = RxMoyaProvider<API>()
+    private let provider = MoyaProvider<API>().rx
     private let notificationManager = NotificationManager<Launch>()
     private let disposeBag = DisposeBag()
     
@@ -37,6 +36,8 @@ struct BackgroundNotificationRegistrar {
             .do(onNext: { _ in
                 self.notificationManager.removePendingNotifications()
             })
+            .mapModel(model: LaunchResponse.self)
+            .map { $0.lau }
             .mapModel(model: Launch.self) { $0["launches"] }
             .bindTo(BlockObserver(notificationManager) { error in
                 completion(error == nil ? .newData : .failed)

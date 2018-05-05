@@ -6,9 +6,9 @@
 //  Copyright © 2017 Claybrook Software. All rights reserved.
 //
 
-import SwiftyJSON
+import Foundation
 
-enum AgencyType: Int {
+enum AgencyType: Int, Codable {
     case unknown
     case government
     case multinational
@@ -21,7 +21,17 @@ enum AgencyType: Int {
     }
 }
 
-struct Agency: JSONModel {
+struct Agency: Codable {
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name
+        case abbreviation = "abbrev"
+        case countryCode
+        case type
+        case infoURL
+        case wikiURL
+    }
+    
     let id: Int
     let name: String
     let abbreviation: String
@@ -29,20 +39,4 @@ struct Agency: JSONModel {
     let type: AgencyType
     let infoURL: URL?
     let wikiURL: URL?
-    
-    init?(json: JSON) {
-        guard let id = json["id"].int,
-            let name = json["name"].string,
-            let type = json["type"].int.flatMap({ AgencyType($0) }),
-            let abbreviation = json["abbrev"].string,
-            let countryCode = json["countryCode"].string else { assertionFailure(); return nil }
-        
-        self.id = id
-        self.name = name
-        self.type = type
-        self.abbreviation = abbreviation
-        self.countryCode = countryCode
-        self.infoURL = json["infoURL"].string.flatMap({ URL(string: $0) })
-        self.wikiURL = json["wikiURL"].string.flatMap({ URL(string: $0) })
-    }
 }

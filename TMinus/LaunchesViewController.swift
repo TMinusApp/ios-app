@@ -10,7 +10,6 @@ import UIKit
 import Moya
 import RxSwift
 import RxCocoa
-import SwiftyJSON
 
 struct LaunchPageResults {
     private(set) var launches = [Launch]()
@@ -37,7 +36,7 @@ class LaunchesViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
     
-    private let provider = RxMoyaProvider<API>()
+    private let provider = MoyaProvider<API>().rx
     private let notificationManager = NotificationManager<Launch>()
     private let disposeBag = DisposeBag()
     

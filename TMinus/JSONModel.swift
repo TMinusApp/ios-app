@@ -6,35 +6,45 @@
 //  Copyright © 2017 Claybrook Software. All rights reserved.
 //
 
-import SwiftyJSON
 import RxSwift
 import Moya
 
-protocol JSONModel {
-    init?(json: JSON)
-}
-
 extension ObservableType where E == Response {
     
-    /// Map a Moya Response Observable to a model object which implements JSONModel
+    /// Map a Moya Response Observable to a model object which implements Decodable
     ///
-    /// - Parameter model: The type of model which implements JSONModel
-    /// - Parameter jsonMapper: An optional closure which lets you map the root JSON node to a child node
-    /// - Parameter root: The root JSON node, which can be used to drill deeper into the structure
-    ///
-    /// - Returns: An Observable<T> which emits each instance of your model that could be decoded, then completes
-    func mapModel<T: JSONModel>(model: T.Type, jsonMapper: @escaping (_ root: JSON) -> (JSON) = { $0 }) -> Observable<T> {
-        return mapJSON().flatMap({ (result) -> Observable<T> in
-            return Observable.create({ (observer) -> Disposable in
-                
-                let mappedJSON = jsonMapper(JSON(result))
-                let jsonArray = mappedJSON.array ?? [mappedJSON]
-                let models = jsonArray.flatMap { T(json: $0) }
-                models.forEach { observer.onNext($0) }
-                observer.onCompleted()
-                
-                return Disposables.create()
-            })
-        })
+    /// - Parameter model: The type of model which implements Decodable
+    /// - Returns: An Observable<T> which emits the decoded model, then completes
+    public func mapModel<T: Decodable>(model: T.Type) -> Observable<T> {
+        return filterSuccessfulStatusCodes()
+            .map { response -> T in
+                return try self.createModel(from: response)
+        }
+    }
+    
+    public func mapModel<T: Decodable, U: Decodable & Swift.Error>(model: T.Type, errorModel: U.Type) -> Observable<T> {
+        return mapErrorModel(U.self).mapModel(model: T.self)
+    }
+    
+    public func mapErrorModel<T: Decodable & Swift.Error>(_ model: T.Type) -> Observable<Response> {
+        return map { response in
+            guard !response.isSuccess else { return response }
+            let model: T = try self.createModel(from: response)
+            throw model
+        }
+    }
+    
+    // MARK: Private
+    
+    private func createModel<T: Decodable>(from response: Response) throws -> T {
+        let decoder = JSONDecoder()
+        // TODO: handle date decoding
+        return try decoder.decode(T.self, from: response.data)
+    }
+}
+
+extension Response {
+    var isSuccess: Bool {
+        return (200..<300).contains(statusCode)
     }
 }
