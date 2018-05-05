@@ -10,6 +10,7 @@ import Foundation
 import UserNotifications
 
 struct LaunchResponse: Codable {
+    let total: Int
     let launches: [Launch]
 }
 

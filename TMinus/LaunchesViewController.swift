@@ -83,23 +83,15 @@ class LaunchesViewController: UIViewController {
         guard !isFetching else { return }
         
         isFetching = true
-        provider.request(.showLaunches(page: launchResults.pagesFetched))
-            .filterSuccessfulStatusCodes()
-            .mapJSON()
-            .map { (response) -> (launches: [Launch], total: Int) in
-                let json = JSON(response)
-                guard let launchJSON = json["launches"].array,
-                    let total = json["total"].int else {
-                    throw LaunchResponseError()
-                }
-                let launches = launchJSON.flatMap({ Launch(json: $0) })
-                return (launches, total)
-            }
+        provider
+            .request(.showLaunches(page: launchResults.pagesFetched))
+            .asObservable()
+            .mapModel(model: LaunchResponse.self)
             .subscribe { [weak self] (event) in
                 self?.loadingView.hide()
                 switch event {
-                case .next(let launches, let total):
-                    self?.handleFetchComplete(with: launches, total: total)
+                case .next(let response):
+                    self?.handleFetchComplete(with: response.launches, total: response.total)
                 case .error(let error):
                     self?.handleError(error)
                 case .completed:

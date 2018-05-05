@@ -25,10 +25,14 @@ struct BackgroundNotificationRegistrar {
     /// - Parameter completion: the block passed by the system to the background fetch method of the app delegate
     func register(with completion: @escaping (UIBackgroundFetchResult) -> Void) {
         
-        notificationManager.checkAuthStatus()
+        notificationManager
+            .checkAuthStatus()
             .flatMap { authStatus -> Observable<Response> in
                 if authStatus == .granted {
-                    return self.provider.request(.showLaunches(page: 0))
+                    return self
+                        .provider
+                        .request(.showLaunches(page: 0))
+                        .asObservable()
                 } else {
                     throw RegistrarError.notAuthorized
                 }
@@ -37,10 +41,11 @@ struct BackgroundNotificationRegistrar {
                 self.notificationManager.removePendingNotifications()
             })
             .mapModel(model: LaunchResponse.self)
-            .map { $0.lau }
-            .mapModel(model: Launch.self) { $0["launches"] }
-            .bindTo(BlockObserver(notificationManager) { error in
-                completion(error == nil ? .newData : .failed)
+            .map { $0.launches }
+            .subscribe(onNext: { _ in
+                completion(.newData)
+            }, onError: { _ in
+                completion(.failed)
             })
             .disposed(by: disposeBag)
     }
