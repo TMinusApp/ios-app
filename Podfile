@@ -3,8 +3,9 @@ use_frameworks!
 inhibit_all_warnings!
 
 target 'T-Minus' do
-  pod 'Moya'
-  pod 'RxSwift'
-  pod 'Moya/RxSwift'
-  pod 'RxCocoa'
+    pod 'SwiftLint'
+    pod 'Moya'
+    pod 'RxSwift'
+    pod 'Moya/RxSwift'
+    pod 'RxCocoa'
 end

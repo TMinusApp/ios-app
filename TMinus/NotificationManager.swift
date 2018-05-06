@@ -6,9 +6,8 @@
 //  Copyright © 2017 Claybrook Software. All rights reserved.
 //
 
-import Foundation
-import UserNotifications
 import RxSwift
+import UserNotifications
 
 enum NotificationAuthStatus {
     case unknown, granted, denied
@@ -28,16 +27,15 @@ struct NotificationManager<T: NotificationType> {
         let request = model.makeNotificationRequest()
         UNUserNotificationCenter.current().add(request, withCompletionHandler: { (error) in
             if let error = error {
-                print("error registering notification: \(error.localizedDescription)")
+                debugPrint("error registering notification: \(error.localizedDescription)")
             }
         })
     }
 }
 
-//MARK: Rx Extensions
+// MARK: Rx Extensions
 
 extension NotificationManager {
-    
     func checkAuthStatus() -> Observable<NotificationAuthStatus> {
         return Observable.create { observer in
             UNUserNotificationCenter.current().getNotificationSettings { settings in
@@ -77,7 +75,9 @@ extension NotificationManager {
 }
 
 extension NotificationManager: ObserverType {
+    //swiftlint:disable type_name
     typealias E = T
+    //swiftlint:enable type_name
     
     func on(_ event: Event<T>) {
         switch event {

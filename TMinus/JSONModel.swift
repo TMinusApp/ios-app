@@ -6,8 +6,8 @@
 //  Copyright © 2017 Claybrook Software. All rights reserved.
 //
 
-import RxSwift
 import Moya
+import RxSwift
 
 extension ObservableType where E == Response {
     
@@ -19,7 +19,7 @@ extension ObservableType where E == Response {
         return filterSuccessfulStatusCodes()
             .map { response -> T in
                 return try self.createModel(from: response)
-        }
+            }
     }
     
     public func mapModel<T: Decodable, U: Decodable & Swift.Error>(model: T.Type, errorModel: U.Type) -> Observable<T> {

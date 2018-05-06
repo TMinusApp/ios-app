@@ -13,7 +13,7 @@ class LoadingView: UIView {
     var spinnerContainer: UIView!
     var spinner: UIActivityIndicatorView!
     
-    //MARK: Initializers
+    // MARK: Initializers
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,14 +29,14 @@ class LoadingView: UIView {
         self.init(frame: CGRect.zero)
     }
     
-    //MARK: Superclass
+    // MARK: Superclass
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        spinnerContainer.layer.cornerRadius = spinnerContainer.bounds.width/2.0
+        spinnerContainer.layer.cornerRadius = spinnerContainer.bounds.width / 2.0
     }
     
-    //MARK: Public
+    // MARK: Public
     
     func showInView(_ view: UIView) {
         if superview != view {
@@ -52,7 +52,7 @@ class LoadingView: UIView {
         setViewHidden(true, animated: true)
     }
     
-    //MARK: Private
+    // MARK: Private
     
     fileprivate func setupView() {
         spinnerContainer = UIView()
@@ -84,10 +84,10 @@ class LoadingView: UIView {
         
         UIView.animate(withDuration: duration, delay: 0.0, options: .beginFromCurrentState, animations: {
             self.alpha = alpha
-        }) { finished in
+        }, completion: { finished in
             if finished && hidden {
                 self.removeFromSuperview()
             }
-        }
+        })
     }
 }

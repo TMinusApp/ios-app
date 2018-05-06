@@ -18,7 +18,7 @@ class LaunchDetailViewController: UIViewController {
         }
     }
     
-    //MARK: Private
+    // MARK: Private
     
     private func configure(withLaunch launch: Launch) {
         title = launch.name

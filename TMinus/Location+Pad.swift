@@ -6,7 +6,6 @@
 //  Copyright © 2017 Claybrook Software. All rights reserved.
 //
 
-import Foundation
 import CoreLocation
 
 struct Location: Codable {

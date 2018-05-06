@@ -10,11 +10,11 @@ import Foundation
 
 extension TimeInterval {
     static var oneWeek: TimeInterval {
-        return 604800 // 7 * 24 * 60 * 60
+        return 604_800 // 7 * 24 * 60 * 60
     }
     
     static var oneDay: TimeInterval {
-        return 86400 // 24 * 60 * 60
+        return 86_400 // 24 * 60 * 60
     }
     
     static var oneHour: TimeInterval {

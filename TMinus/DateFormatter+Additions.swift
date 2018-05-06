@@ -8,7 +8,7 @@
 
 import Foundation
 
-fileprivate var formatters = [String:DateFormatter]()
+private var formatters = [String: DateFormatter]()
 
 extension DateFormatter {
     static var apiFormatter: DateFormatter {
@@ -33,7 +33,7 @@ extension DateFormatter {
         return getDateFormatter(with: "ccc, LLL dd") // Tues, Sept 12
     }
     
-    //MARK: Private
+    // MARK: Private
     
     private static func getDateFormatter(with format: String, locale: Locale = Locale.current, timeZone: TimeZone = TimeZone.current) -> DateFormatter {
         if let formatter = formatters[format] {

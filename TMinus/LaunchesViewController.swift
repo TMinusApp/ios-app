@@ -6,10 +6,10 @@
 //  Copyright © 2017 Claybrook Software. All rights reserved.
 //
 
-import UIKit
 import Moya
-import RxSwift
 import RxCocoa
+import RxSwift
+import UIKit
 
 struct LaunchPageResults {
     private(set) var launches = [Launch]()
@@ -34,7 +34,7 @@ struct LaunchResponseError: Swift.Error {}
 
 class LaunchesViewController: UIViewController {
 
-    @IBOutlet var tableView: UITableView!
+    @IBOutlet private var tableView: UITableView!
     
     private let provider = MoyaProvider<API>().rx
     private let notificationManager = NotificationManager<Launch>()
@@ -44,7 +44,7 @@ class LaunchesViewController: UIViewController {
     private var isFetching = false
     private var loadingView = LoadingView()
     
-    //MARK: Superclass
+    // MARK: Superclass
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,7 +77,7 @@ class LaunchesViewController: UIViewController {
         }
     }
     
-    //MARK: Private
+    // MARK: Private
     
     fileprivate func fetchNextPage() {
         guard !isFetching else { return }
@@ -154,7 +154,9 @@ extension LaunchesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
+            //swiftlint:disable force_cast
             let cell = tableView.dequeueReusableCell(withIdentifier: LaunchCell.reuseID, for: indexPath) as! LaunchCell
+            //swiftlint:enable force_cast
             cell.configure(with: launchResults.launches[indexPath.row])
             return cell
         } else {

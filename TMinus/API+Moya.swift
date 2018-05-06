@@ -9,7 +9,7 @@
 import Moya
 
 extension API: TargetType {
-    var headers: [String : String]? {
+    var headers: [String: String]? {
         return nil
     }
     
@@ -30,7 +30,7 @@ extension API: TargetType {
         return .get
     }
     
-    var parameters: [String : Any]? {
+    var parameters: [String: Any]? {
         var parameters: [String: Any] = [
             "mode": "verbose",
             "limit": pageSize

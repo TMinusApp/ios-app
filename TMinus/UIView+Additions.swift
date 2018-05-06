@@ -15,7 +15,7 @@ extension UIView { // Constraints
     }
     
     func constrainEdgesToSuperview(with inset: UIEdgeInsets) {
-        guard let superview=superview else { assertionFailure("must have a superview"); return }
+        guard let superview = superview else { assertionFailure("must have a superview"); return }
         
         translatesAutoresizingMaskIntoConstraints = false
         superview.leftAnchor.constraint(equalTo: leftAnchor, constant: inset.left).isActive = true
@@ -26,8 +26,7 @@ extension UIView { // Constraints
 }
 
 extension UIView { // Actions
-    
-    class func performWithoutActions(block: () -> ()) {
+    class func performWithoutActions(block: () -> Void) {
         CATransaction.begin()
         CATransaction.setDisableActions(true)
         block()

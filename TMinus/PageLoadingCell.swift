@@ -13,7 +13,7 @@ class PageLoadingCell: UITableViewCell {
         return "PageLoadingCell"
     }
     
-    @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet private var activityIndicator: UIActivityIndicatorView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

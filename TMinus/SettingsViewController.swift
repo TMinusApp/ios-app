@@ -15,9 +15,9 @@ protocol SettingsViewControllerDelegate: class {
 class SettingsViewController: UIViewController {
     
     weak var delegate: SettingsViewControllerDelegate?
-    @IBOutlet var fetchesLabel: UILabel!
+    @IBOutlet private var fetchesLabel: UILabel!
     
-    //MARK: Superclass
+    // MARK: Superclass
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,7 @@ class SettingsViewController: UIViewController {
         fetchesLabel.text = "Background Fetches: \(count)"
     }
     
-    //MARK: Actions
+    // MARK: Actions
     
     @IBAction func doneButtonPressed(_ sender: Any) {
         delegate?.settingsViewControllerFinished(self)

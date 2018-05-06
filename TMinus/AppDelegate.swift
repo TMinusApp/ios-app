@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
-    //MARK: Private
+    // MARK: Private
     
     private func updateRegistrationCount() {
         let count = UserDefaults.standard.integer(forKey: UserDefaultsKey.backgroundFetchCount)

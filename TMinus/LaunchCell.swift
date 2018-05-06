@@ -13,11 +13,11 @@ class LaunchCell: UITableViewCell {
         return "LaunchCell"
     }
     
-    @IBOutlet var rocketLabel: UILabel!
-    @IBOutlet var missionIconView: UIImageView!
-    @IBOutlet var missionLabel: UILabel!
-    @IBOutlet var timeLabel: UILabel!
-    @IBOutlet var probabilityLabel: UILabel!
+    @IBOutlet private var rocketLabel: UILabel!
+    @IBOutlet private var missionIconView: UIImageView!
+    @IBOutlet private var missionLabel: UILabel!
+    @IBOutlet private var timeLabel: UILabel!
+    @IBOutlet private var probabilityLabel: UILabel!
     
     private var timer: Timer?
     private let textProvider = LaunchTextProvider()
@@ -35,12 +35,12 @@ class LaunchCell: UITableViewCell {
         scheduleTimerIfNecessary(for: launch)
     }
     
-    //MARK: Private
+    // MARK: Private
     
     private func scheduleTimerIfNecessary(for launch: Launch) {
         let timeUntil = launch.windowOpenDate.timeIntervalSinceNow
         if timeUntil < .oneDay * 2 {
-            timer = Timer(timeInterval: 0.25, repeats: true) { [weak self] timer in
+            timer = Timer(timeInterval: 0.25, repeats: true) { [weak self] _ in
                 self?.configureTimeLabel(with: launch)
             }
             RunLoop.current.add(timer!, forMode: .commonModes)
