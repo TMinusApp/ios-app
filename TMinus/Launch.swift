@@ -73,8 +73,8 @@ extension Launch: NotificationType {
     }
 }
 
-extension Date {
-    static func fromAPIISODateString(_ dateString: String) -> Date? {
-        return DateFormatter.apiISOFormatter.date(from: dateString)
+extension LaunchResponse: JSONDecodingStrategyProviding {
+    static var dateDecodingStrategy: JSONDecoder.DateDecodingStrategy? {
+        return .formatted(.apiISOFormatter)
     }
 }

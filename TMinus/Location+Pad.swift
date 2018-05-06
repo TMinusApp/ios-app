@@ -17,15 +17,38 @@ struct Location: Codable {
 }
 
 struct Pad: Codable {
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name
+        case latitude
+        case longitude
+        case infoURLString = "infoURL"
+        case wikiURLString = "wikiURL"
+        case mapURLString = "mapURL"
+        case agencies
+    }
+    
     let id: Int
     let name: String
-    let latitude: Double
-    let longitude: Double
-    let infoURL: URL?
-    let wikiURL: URL?
-    let mapURL: URL?
     let agencies: [Agency]
+    
+    fileprivate let infoURLString: String?
+    fileprivate let wikiURLString: String?
+    fileprivate let mapURLString: String?
+    fileprivate let latitude: Double
+    fileprivate let longitude: Double
+}
 
+extension Pad {
+    var infoURL: URL? {
+        return infoURLString.flatMap(URL.init)
+    }
+    var wikiURL: URL? {
+        return wikiURLString.flatMap(URL.init)
+    }
+    var mapURL: URL? {
+        return mapURLString.flatMap(URL.init)
+    }
     var coordinate: CLLocationCoordinate2D {
         return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }

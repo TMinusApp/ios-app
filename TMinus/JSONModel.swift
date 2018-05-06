@@ -38,7 +38,10 @@ extension ObservableType where E == Response {
     
     private func createModel<T: Decodable>(from response: Response) throws -> T {
         let decoder = JSONDecoder()
-        // TODO: handle date decoding
+        if let provider = T.self as? JSONDecodingStrategyProviding.Type,
+            let dateStrategy = provider.dateDecodingStrategy {
+            decoder.dateDecodingStrategy = dateStrategy
+        }
         return try decoder.decode(T.self, from: response.data)
     }
 }
@@ -47,4 +50,8 @@ extension Response {
     var isSuccess: Bool {
         return (200..<300).contains(statusCode)
     }
+}
+
+protocol JSONDecodingStrategyProviding {
+    static var dateDecodingStrategy: JSONDecoder.DateDecodingStrategy? { get }
 }

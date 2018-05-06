@@ -28,7 +28,7 @@ struct Agency: Codable {
         case abbreviation = "abbrev"
         case countryCode
         case type
-        case infoURL
+        case infoURLs
         case wikiURL
     }
     
@@ -37,6 +37,6 @@ struct Agency: Codable {
     let abbreviation: String
     let countryCode: String
     let type: AgencyType
-    let infoURL: URL?
+    let infoURLs: [URL]
     let wikiURL: URL?
 }
