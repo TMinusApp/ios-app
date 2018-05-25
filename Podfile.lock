@@ -12,12 +12,14 @@ PODS:
   - RxCocoa (4.1.2):
     - RxSwift (~> 4.0)
   - RxSwift (4.1.2)
+  - SwiftLint (0.25.1)
 
 DEPENDENCIES:
   - Moya
   - Moya/RxSwift
   - RxCocoa
   - RxSwift
+  - SwiftLint
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -26,6 +28,7 @@ SPEC REPOS:
     - Result
     - RxCocoa
     - RxSwift
+    - SwiftLint
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
@@ -33,7 +36,8 @@ SPEC CHECKSUMS:
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
   RxSwift: e49536837d9901277638493ea537394d4b55f570
+  SwiftLint: ce933681be10c3266e82576dad676fa815a602e9
 
-PODFILE CHECKSUM: 0f6effda59454866f1dcd33242e257d7e0c60b54
+PODFILE CHECKSUM: 4a43f77e1a0a921f84a36f9ef4790b01853e544d
 
 COCOAPODS: 1.5.0
