@@ -45,9 +45,10 @@ class LaunchesViewController: UIViewController {
     private var loadingView = LoadingView()
     
     // MARK: Superclass
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.prefersLargeTitles = true
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 44.0

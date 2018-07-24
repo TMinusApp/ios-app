@@ -30,6 +30,8 @@
 		7546D13C1E7E4BF500EA3608 /* sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 7546D13B1E7E4BF500EA3608 /* sample.json */; };
 		7546D13E1E7E570300EA3608 /* Agency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7546D13D1E7E570300EA3608 /* Agency.swift */; };
 		7546D1401E7E5D1E00EA3608 /* Location+Pad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7546D13F1E7E5D1E00EA3608 /* Location+Pad.swift */; };
+		755A5F852106D3C500C60BFC /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755A5F842106D3C500C60BFC /* UIColor+Additions.swift */; };
+		755A5F872106D41000C60BFC /* UIFont+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755A5F862106D41000C60BFC /* UIFont+Additions.swift */; };
 		75C8CC411E8B6CB300127CD6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C8CC401E8B6CB300127CD6 /* Constants.swift */; };
 		75C8CC431E8B70BD00127CD6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C8CC421E8B70BD00127CD6 /* SettingsViewController.swift */; };
 		75CC8B94209F9F39005A72C8 /* DebugPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CC8B93209F9F39005A72C8 /* DebugPrint.swift */; };
@@ -80,6 +82,8 @@
 		7546D13B1E7E4BF500EA3608 /* sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sample.json; sourceTree = "<group>"; };
 		7546D13D1E7E570300EA3608 /* Agency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Agency.swift; sourceTree = "<group>"; };
 		7546D13F1E7E5D1E00EA3608 /* Location+Pad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Location+Pad.swift"; sourceTree = "<group>"; };
+		755A5F842106D3C500C60BFC /* UIColor+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
+		755A5F862106D41000C60BFC /* UIFont+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Additions.swift"; sourceTree = "<group>"; };
 		75C8CC401E8B6CB300127CD6 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		75C8CC421E8B70BD00127CD6 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		75CC8B93209F9F39005A72C8 /* DebugPrint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugPrint.swift; sourceTree = "<group>"; };
@@ -184,6 +188,8 @@
 				7534A6C71E74A374001A817B /* DateFormatter+Additions.swift */,
 				BEF79DD41E77570200C3F61D /* TimeInterval+Additions.swift */,
 				BEF79DD81E77599900C3F61D /* UIView+Additions.swift */,
+				755A5F842106D3C500C60BFC /* UIColor+Additions.swift */,
+				755A5F862106D41000C60BFC /* UIFont+Additions.swift */,
 				751ECD9B1E973C1700610A5E /* Optional+Additions.swift */,
 			);
 			name = Extensions;
@@ -478,6 +484,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7534A6C81E74A374001A817B /* DateFormatter+Additions.swift in Sources */,
+				755A5F872106D41000C60BFC /* UIFont+Additions.swift in Sources */,
+				755A5F852106D3C500C60BFC /* UIColor+Additions.swift in Sources */,
 				751ECD9C1E973C1700610A5E /* Optional+Additions.swift in Sources */,
 				75C8CC411E8B6CB300127CD6 /* Constants.swift in Sources */,
 				7534A6C51E74A000001A817B /* API+Moya.swift in Sources */,
@@ -615,7 +623,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -667,7 +675,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

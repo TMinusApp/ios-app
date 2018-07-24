@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         application.setMinimumBackgroundFetchInterval(.oneHour)
+        configureAppearance()
         return true
     }
     
@@ -34,5 +35,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let count = UserDefaults.standard.integer(forKey: UserDefaultsKey.backgroundFetchCount)
         UserDefaults.standard.set(count + 1, forKey: UserDefaultsKey.backgroundFetchCount)
         UserDefaults.standard.synchronize()
+    }
+
+    private func configureAppearance() {
+        let navigationBar = UINavigationBar.appearance()
+        navigationBar.barTintColor = .twilightBlue
+        navigationBar.tintColor = .white
+        navigationBar.isTranslucent = false
+        let attributes: [NSAttributedStringKey: Any] = [
+            .foregroundColor: UIColor.white
+        ]
+        navigationBar.titleTextAttributes = attributes
+        navigationBar.largeTitleTextAttributes = attributes
+
+        let tabBar = UITabBar.appearance()
+        tabBar.barTintColor = .twilightBlue
+        tabBar.tintColor = .white
+        tabBar.isTranslucent = false
     }
 }
